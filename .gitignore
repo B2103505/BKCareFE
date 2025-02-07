@@ -17,6 +17,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+# .env để bỏ push file .env ko để lộ thông tin
 
 npm-debug.log*
 yarn-debug.log*
