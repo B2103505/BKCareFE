@@ -1,0 +1,74 @@
+.login-bg {
+    background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    height: 100vh;
+
+    .login-container {
+        width: 400px;
+        height: 100%;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 15px;
+
+        .login-content {
+            padding: 15px;
+
+            .login-text {
+                text-align: center;
+                font-size: 25px;
+                padding-top: 15px;
+                font-weight: bold;
+            }
+
+            .login-input {
+                margin: 10px 3px;
+            }
+
+            .btn-login {
+                width: 100%;
+                height: 35px;
+                margin: 10px 0;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+                color: white;
+                font-size: 15px;
+            }
+
+            .forgot-pw {
+                font-size: 12px;
+            }
+
+            .social-login {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+
+                .google {
+                    font-size: 30px;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    background: rgb(217, 94, 54);
+                    margin-right: 10px;
+                }
+
+                .facebook {
+                    font-size: 30px;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    background: rgb(34, 93, 203);
+                }
+            }
+        }
+    }
+}
