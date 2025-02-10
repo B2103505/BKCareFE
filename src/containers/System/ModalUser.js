@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { emitter } from '../../utils/emitter';
 
 class ModalUser extends Component {
 
@@ -20,6 +21,7 @@ class ModalUser extends Component {
     }
 
     componentDidMount() {
+
     }
 
     toggle = () => {
@@ -31,11 +33,7 @@ class ModalUser extends Component {
         copyState[id] = event.target.value;
         this.setState({
             ...copyState
-        }
-            // , () => {
-            //     console.log(this.state);
-            // }
-        )
+        })
     }
 
     checkValideInput = () => {
@@ -60,6 +58,25 @@ class ModalUser extends Component {
             // console.log('data modal ', this.state);
         }
 
+    }
+
+    listenToEmitter() {
+        emitter.on('EVEN_CLEAR_MODAL_DATA', () => {
+            this.resetFormAddNewUser();
+        })
+    }
+
+    resetFormAddNewUser() {
+        this.setState({
+            email: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            address: '',
+            phoneNumber: '',
+            Gender: 1,
+            roleId: 'R3'
+        })
     }
 
     render() {
@@ -161,6 +178,13 @@ class ModalUser extends Component {
                         onClick={() => { this.toggle() }}
                     >
                         Cancel
+                    </Button>
+                    <Button
+                        color="primary"
+                        className='px-3'
+                        onClick={() => { this.resetFormAddNewUser() }}
+                    >
+                        <i className="fas fa-sync-alt"></i>
                     </Button>
                 </ModalFooter>
             </Modal>

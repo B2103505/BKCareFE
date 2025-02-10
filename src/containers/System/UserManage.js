@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './UserManage.scss';
-import { GetAllUsers, CreateNewUserService } from '../../services/UserService';
+import { GetAllUsers, CreateNewUserService, DeleteUserService } from '../../services/UserService';
 import ModalUser from './ModalUser';
-import { reject } from 'lodash';
+// import { reject } from 'lodash';
+import { emitter } from '../../utils/emitter';
+
 
 class UserManage extends Component {
 
@@ -59,6 +61,20 @@ class UserManage extends Component {
         }
     }
 
+    handleDeleteUser = async (user) => {
+        console.log('click me', user);
+        try {
+            let res = await DeleteUserService(user.id);
+            if (res && res.errCode === 0) {
+                await this.getAllUserReact();
+            } else {
+                alert(res.errMessage)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
     // Run Component = run constructor (init state) => run Didmount (set state) => render
 
     render() {
@@ -97,7 +113,7 @@ class UserManage extends Component {
                                         <td>{item.address}</td>
                                         <td>
                                             <button className='btn-edit'><i className="fas fa-edit"></i></button>
-                                            <button className='btn-delete'><i className="fas fa-trash-alt"></i></button>
+                                            <button className='btn-delete' onClick={() => this.handleDeleteUser(item)}><i className="fas fa-trash-alt"></i></button>
                                         </td>
                                     </tr>
                                 )
