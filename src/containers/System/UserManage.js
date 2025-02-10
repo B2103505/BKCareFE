@@ -82,7 +82,6 @@ class UserManage extends Component {
     }
 
     handleEditUser = async (userId) => {
-        // console.log('check edit user', userId);
         this.setState({
             isOpenModalEditUser: true,
             userEdit: userId
@@ -90,7 +89,6 @@ class UserManage extends Component {
     }
 
     handleSaveChangeUser = async (user) => {
-        console.log('click me', user);
         try {
             let response = await EditUserService(user);
             if (response && response.errCode === 0) {
