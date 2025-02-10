@@ -9,4 +9,9 @@ const GetAllUsers = (inputId) => {
     return axios.get(`/api/get-all-user?id=${inputId}`);
 }
 
-export { handleLoginApi, GetAllUsers }
+const CreateNewUserService = (data) => {
+    // console.log('check data from service', data);
+    return axios.post('/api/create-new-user', data);
+}
+
+export { handleLoginApi, GetAllUsers, CreateNewUserService }
