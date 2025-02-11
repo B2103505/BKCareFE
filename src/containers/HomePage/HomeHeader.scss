@@ -1,13 +1,15 @@
 .home-header-container {
+    margin: 5px;
     height: 60px;
     // border: 1px solid red;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 15px;
 
     .home-header-content {
         width: 100%;
         display: flex;
         height: 100%;
+        margin-left: 50px;
 
         .left-content {
             width: 25%;
@@ -15,10 +17,14 @@
             align-items: center;
 
             .header-logo {
-                background: url('../../assets/logo2.jpg') center center no-repeat; //Fix cái ảnh này phát
                 width: 100%;
                 height: 100%;
                 cursor: pointer;
+
+                img {
+                    width: 75%;
+                    padding: 0 10px;
+                }
             }
 
             i {
@@ -31,16 +37,150 @@
         .center-content {
             width: 50%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 25px;
+
+            .content-bar {
+                justify-content: space-between;
+                align-items: center;
+                display: flex;
+                width: 60%;
+
+                .child-content {
+                    padding: 0 25px;
+                }
+            }
+
+            .search-bar {
+                display: flex;
+                font-size: 1.2vw;
+                width: 40%;
+                justify-content: space-around;
+
+                .search-input {
+                    width: 70%;
+                    margin: 10px;
+                    padding: 10px;
+                    border-radius: 25px;
+                }
+
+                i {
+                    padding: 20px;
+                    position: absolute;
+                    right: 360px;
+                    top: 6px;
+                    cursor: pointer;
+                }
+            }
         }
 
         .right-content {
-            width: 25%;
+            width: 20%;
             display: flex;
             justify-content: center;
             align-items: center;
+
+
+            .cooperation {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+                margin-top: 15px;
+            }
+
+            .schedule {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+                margin-top: 15px;
+            }
+
+            .flag-language {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+                margin-top: 15px;
+            }
         }
+    }
+}
+
+.home-header-banner {
+    .introduce-section {
+        background-image: url("../../assets/introduce.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* Không lặp ảnh */
+        width: 100%;
+        height: 31.25rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        justify-content: center;
+        /* Căn giữa theo chiều ngang */
+        align-items: center;
+        /* Căn giữa theo chiều dọc */
+
+        .Search-Recommend {
+            width: 50%;
+            height: 25%;
+            display: flex;
+            // justify-content: center;
+            // align-items: center;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            flex-direction: column;
+
+            .Search-Area {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: white;
+
+                .search-input {
+                    height: 100%;
+                    width: 100%;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                }
+
+                i {
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+
+            .Recommend-Area {
+                float: left !important;
+                cursor: pointer;
+
+                i {
+                    margin: 0 10px;
+                    cursor: pointer;
+                }
+            }
+
+
+
+
+        }
+    }
+
+    .introduce-section h2 {
+        text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
+        /* Bóng chữ sáng giúp làm nổi bật chữ */
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
     }
 }
