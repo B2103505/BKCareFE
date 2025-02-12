@@ -4,12 +4,21 @@ import './HomeHeader.scss';
 import logo from '../../assets/Logo.webp';
 import { FormattedMessage } from 'react-intl';
 import { injectIntl } from 'react-intl';
+import { LANGUAGES } from '../../utils';
+import { changelanguageApp } from '../../store/actions';
 
 class HomeHeader extends Component {
+
+    changeLanguage = (language) => {
+        // alert(language);
+        // fire redux event : actions
+        this.props.changelanguageAppRedux(language);
+    }
 
     render() {
 
         const { intl } = this.props;
+        let language = this.props.language;
 
         return (
             <React.Fragment>
@@ -70,12 +79,12 @@ class HomeHeader extends Component {
                                 <p> <FormattedMessage id="homeheader.appointment" /></p>
                             </div>
                             <div className='set-language'>
-                                <div className='flag-language-vi'>
-                                    VI
+                                <div className={language === LANGUAGES.VI ? 'flag-language-vi active' : 'flag-language-vi'}>
+                                    <span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VI</span>
                                 </div>
 
-                                <div className='flag-language-en'>
-                                    EN
+                                <div className={language === LANGUAGES.EN ? 'flag-language-en active' : 'flag-language-en'}>
+                                    <span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span>
                                 </div>
                             </div>
 
@@ -124,6 +133,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        changelanguageAppRedux: (language) => dispatch(changelanguageApp(language))
     };
 };
 
