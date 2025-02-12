@@ -1,4 +1,19 @@
 {
+    "homeheader": {
+        "tag-all": "Tất cả",
+        "tag-home": "Tại nhà",
+        "tag-hospital": "Tại viện",
+        "tag-healthy": "Sống khỏe",
+        "search": "Tìm kiếm",
+        "cooperation": "Hợp tác",
+        "appointment": "Lịch hẹn"
+    },
+    "banner": {
+        "title1": "NƠI KHỞI NGUỒN SỨC KHỎE",
+        "title2": "HÃY CHUNG TAY BẢO VỆ ĐỂ LUÔN CÓ SỨC KHỎE DÂNG TRÀO",
+        "findHospital": "Chọn bệnh viện",
+        "search": "Tìm kiếm"
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",

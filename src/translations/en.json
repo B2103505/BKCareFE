@@ -1,4 +1,19 @@
 {
+    "homeheader": {
+        "tag-all": "ALL",
+        "tag-home": "At home",
+        "tag-hospital": "At the hospital",
+        "tag-healthy": "Live healthy",
+        "search": "Search",
+        "cooperation": "cooperation",
+        "appointment": "appointment"
+    },
+    "banner": {
+        "title1": "THE PLACE WHERE HEALTH STARTS",
+        "title2": "LET'S JOIN HANDS TO PROTECT TO ALWAYS HAVE GOOD HEALTH",
+        "findHospital": "Select hospital",
+        "search": "Search"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",
