@@ -1,0 +1,86 @@
+.modal-bk {
+  position: fixed; /* Luôn cố định trên màn hình */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Căn giữa chính xác */
+  width: 75%;
+  height: 80%;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Đảm bảo modal hiển thị trên cùng */
+
+  opacity: 1;
+}
+
+.modal-bk__content .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /* background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  position: relative; */
+}
+
+.doctor_container {
+  display: flex;
+
+  height: 70vh;
+  width: 80vh;
+}
+
+.doctor_container img {
+  width: 15%;
+  height: 15%;
+
+  border: 1px solid black;
+  border-radius: 50%;
+
+  margin-right: 2rem;
+}
+
+.doctor-info {
+  font-size: medium;
+  text-align: justify;
+}
+.doctor-info p {
+  margin-top: 1rem;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Lịch khám */
+.schedule p {
+  font-size: 1.3rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.schedule_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.time_exam {
+  /* flex: 1 1 calc(25% - 10px); */
+}
+
+.time_exam button {
+  border: none;
+  height: 2rem;
+  width: 6.5rem;
+
+  font-weight: bold;
+  font-size: 1rem;
+}
