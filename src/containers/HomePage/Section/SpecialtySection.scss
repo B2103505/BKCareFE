@@ -1,0 +1,55 @@
+.specialty-links-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 2rem;
+}
+
+.specialty-container {
+  button {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    border: 2px solid rgb(218, 233, 236);
+    border-radius: 20px;
+    background-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    div {
+      height: 15rem;
+      width: 15rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+        padding-bottom: 1rem;
+      }
+    }
+
+    span {
+      color: black;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
+
+.specialty-container {
+  flex: 1;
+
+  flex: 0 0 calc(33.33% - 20px); /* Đảm bảo chỉ 3 mục hiển thị đầy đủ trong khung */
+  scroll-snap-align: center; /* Căn giữa khi cuộn */
+}

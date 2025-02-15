@@ -18,7 +18,7 @@ import HomePage from './HomePage/HomePage.js';
 
 import { CustomToastCloseButton } from '../components/CustomToast';
 import CustomScrollbars from '../components/CustomScrollbars.js';
-import './HomePage/Section/index.css'
+import './index.css'
 
 class App extends Component {
 

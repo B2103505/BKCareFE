@@ -31,24 +31,25 @@
 
   height: 70vh;
   width: 80vh;
-}
 
-.doctor_container img {
-  width: 15%;
-  height: 15%;
+  img {
+    width: 15%;
+    height: 15%;
 
-  border: 1px solid black;
-  border-radius: 50%;
+    border: 1px solid black;
+    border-radius: 50%;
 
-  margin-right: 2rem;
+    margin-right: 2rem;
+  }
 }
 
 .doctor-info {
   font-size: medium;
   text-align: justify;
-}
-.doctor-info p {
-  margin-top: 1rem;
+
+  p {
+    margin-top: 1rem;
+  }
 }
 
 .close {
@@ -70,10 +71,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-}
-
-.time_exam {
-  /* flex: 1 1 calc(25% - 10px); */
 }
 
 .time_exam button {

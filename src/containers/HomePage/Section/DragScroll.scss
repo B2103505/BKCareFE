@@ -1,0 +1,5 @@
+.drag-scroll-container {
+  overflow-x: scroll; /* Kích hoạt cuộn ngang */
+  overflow-x: hidden; /* Ẩn thanh cuộn ngang */
+  cursor: grab; /* Con trỏ dạng tay khi kéo */
+}

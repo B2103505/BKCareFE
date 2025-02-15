@@ -1,0 +1,22 @@
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+
+  height: 2.6rem;
+  width: 2.9rem;
+  z-index: 10;
+
+  border: 2px solid rgb(181, 230, 237);
+  border-radius: 0.5rem;
+  background-color: white;
+
+  cursor: pointer;
+
+  &.left {
+    left: -1.4rem;
+  }
+
+  &.right {
+    right: -1.4rem;
+  }
+}

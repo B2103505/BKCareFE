@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ModalBK.css";
+import "./ModalBK.scss";
 
 function ModalBK({ service, onclose }) {
   const schedule_doctor = [

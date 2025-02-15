@@ -1,0 +1,43 @@
+.services-overview {
+  margin: 10px 10rem 0px 10rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 3.5rem;
+}
+
+.service-links-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 30px;
+}
+
+.service-img {
+  width: 10%;
+  height: 55%;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+.service-container {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 50px;
+
+  button {
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.service-item {
+  font-size: 1.6rem;
+  color: black;
+  font-weight: bold;
+}

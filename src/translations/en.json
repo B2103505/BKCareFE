@@ -1,135 +1,181 @@
 {
-    "homeheader": {
-        "tag-all": "ALL",
-        "tag-home": "At home",
-        "tag-hospital": "At the hospital",
-        "tag-healthy": "Live healthy",
-        "search": "Search",
-        "cooperation": "cooperation",
-        "appointment": "appointment"
-    },
-    "banner": {
-        "title1": "THE PLACE WHERE HEALTH STARTS",
-        "title2": "LET'S JOIN HANDS TO PROTECT TO ALWAYS HAVE GOOD HEALTH",
-        "findHospital": "Select hospital",
-        "search": "Search"
-    },
-    "common": {
-        "add": "Add",
-        "edit": "Edit",
-        "delete": "Delete",
-        "decentralize": "Decentralize",
-        "close": "Close",
-        "save": "Save",
-        "refresh": "Refresh",
-        "accept": "Accept",
-        "confirm": "Confirm",
-        "confirm-this-task": "Are you sure to process this task?",
-        "fail-to-load-data": "Fail to load data",
-        "unknown-error": "There was an error",
-        "internal-server-error": "Internal server error",
-        "bad-request": "Bad request",
-        "forbiden-request": "Invalid input data",
-        "fail-to-load-all-code": "Fail to load data from allcode",
-        "sum": "Sum",
-        "date-range-invalid": "Date range invalid"
-    },
-    "login": {
-        "login": "Login",
-        "username": "Username",
-        "password": "Password",
-        "userpass-wrong": "Invalid username or password!"
-    },
-    "menu": {
-        "system": {
-            "header": "System",
-            "system-administrator": {
-                "header": "System Administrator",
-                "user-manage": "User manage",
-                "product-manage": "Package manage",
-                "register-package-group-or-account": "Register service package for group/account"
-            },
-            "system-parameter": {
-                "header": "System-parameter"
-            }
-        }
-    },
+  "homeheader": {
+    "tag-all": "ALL",
+    "tag-home": "At home",
+    "tag-hospital": "At the hospital",
+    "tag-healthy": "Live healthy",
+    "search": "Search",
+    "cooperation": "cooperation",
+    "appointment": "appointment"
+  },
+  "banner": {
+    "title1": "THE PLACE WHERE HEALTH STARTS",
+    "title2": "LET'S JOIN HANDS TO PROTECT TO ALWAYS HAVE GOOD HEALTH",
+    "findHospital": "Select hospital",
+    "search": "Search"
+  },
+  "common": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "decentralize": "Decentralize",
+    "close": "Close",
+    "save": "Save",
+    "refresh": "Refresh",
+    "accept": "Accept",
+    "confirm": "Confirm",
+    "confirm-this-task": "Are you sure to process this task?",
+    "fail-to-load-data": "Fail to load data",
+    "unknown-error": "There was an error",
+    "internal-server-error": "Internal server error",
+    "bad-request": "Bad request",
+    "forbiden-request": "Invalid input data",
+    "fail-to-load-all-code": "Fail to load data from allcode",
+    "sum": "Sum",
+    "date-range-invalid": "Date range invalid"
+  },
+  "login": {
+    "login": "Login",
+    "username": "Username",
+    "password": "Password",
+    "userpass-wrong": "Invalid username or password!"
+  },
+  "menu": {
     "system": {
-        "user-manage": {
-            "fail-to-load-fouser": "Fail to load system users list",
-            "user-id": "User ID",
-            "usertype": "User type",
-            "username": "Username",
-            "fullname": "Fullname",
-            "mobile": "Phone",
-            "email": "Email",
-            "status": "Status",
-            "add-user": "Add user",
-            "edit-user": "Edit user information",
-            "password": "Password",
-            "retype-password": "Retype password",
-            "add-user-success": "Add user successfully",
-            "edit-user-success": "Change user information successfully",
-            "add-user-fail": "Fail to add user",
-            "edit-user-fail": "Fail to change user information",
-            "del-user-success": "Delete user successfully",
-            "del-user-fail": "Fail to delete user",
-            "invalid-input": {
-                "username": "Please fill in username",
-                "fullname": "Please fill in fullname",
-                "password": "Please fill in password"
-            },
-            "sure-delete-user": "Are you sure to delete this user?"
-        },
-        "product-manage": {
-            "fail-to-load-foprtype": "Fail to load packages list",
-            "prid": "Package ID",
-            "prname": "Package name",
-            "prtype": "Package type",
-            "status": "Status",
-            "description": "Description",
-            "effective-date": "Effective date",
-            "expiration-date": "Expiration date",
-            "add-product": "Add package",
-            "add-product-success": "Add package successfully",
-            "add-product-fail": "Fail to add package",
-            "edit-product": "Edit package information",
-            "package-decentralize": "Package decentralize",
-            "edit-product-success": "Edit package information successfully",
-            "edit-product-fail": "Fail to edit package information",
-            "delete-product-success": "Delete package successfully",
-            "delete-product-fail": "Fail to delete package",
-            "invalid-input": {
-                "prid": "Please fill in package ID",
-                "prname": "Please fill in package name"
-            },
-            "fail-to-load-decentralize-info": "Fail to load decentralize info",
-            "save-decentralize-success": "Save decentralization successfully",
-            "save-decentralize-fail": "Fail to save decentralization",
-            "sure-delete-package": "Are you sure to delete this package?"
-        },
-        "register-package-group-or-acc": {
-            "assign-service-package-to-customer": "Assign service package to customer",
-            "package-name": "Package name",
-            "assign-type": "Assign type",
-            "cust-acc-group": "Customer/account group",
-            "effective-date": "Effective date",
-            "expiration-date": "Expiration date",
-            "assign": "Assign",
-            "manage-assign-groups": "Manage assign groups",
-            "group-cust-acc-name": "Group/customer account name",
-            "del-assign": "Del assign",
-            "fail-to-load-manage-assign-groups-list": "Fail to load manage assign groups list",
-            "invalid-selected": {
-                "currentfoProduct": "Invalid package",
-                "currentAssignType": "Invalid assign type",
-                "currentFoUser": "Invalid customer/account group"
-            },
-            "assign-service-package-to-customer-success": "Assign service package to customer successfully",
-            "assign-service-package-to-customer-fail": "Fail to assign service package to customer",
-            "remove-assign-success": "Unassign service package to customer successfully",
-            "remove-assign-fail": "Fail to unassign service package to customer",
-            "sure-delete-assign": "Are you sure to unassign service package to customer?"
-        }
+      "header": "System",
+      "system-administrator": {
+        "header": "System Administrator",
+        "user-manage": "User manage",
+        "product-manage": "Package manage",
+        "register-package-group-or-account": "Register service package for group/account"
+      },
+      "system-parameter": {
+        "header": "System-parameter"
+      }
     }
+  },
+  "system": {
+    "user-manage": {
+      "fail-to-load-fouser": "Fail to load system users list",
+      "user-id": "User ID",
+      "usertype": "User type",
+      "username": "Username",
+      "fullname": "Fullname",
+      "mobile": "Phone",
+      "email": "Email",
+      "status": "Status",
+      "add-user": "Add user",
+      "edit-user": "Edit user information",
+      "password": "Password",
+      "retype-password": "Retype password",
+      "add-user-success": "Add user successfully",
+      "edit-user-success": "Change user information successfully",
+      "add-user-fail": "Fail to add user",
+      "edit-user-fail": "Fail to change user information",
+      "del-user-success": "Delete user successfully",
+      "del-user-fail": "Fail to delete user",
+      "invalid-input": {
+        "username": "Please fill in username",
+        "fullname": "Please fill in fullname",
+        "password": "Please fill in password"
+      },
+      "sure-delete-user": "Are you sure to delete this user?"
+    },
+    "product-manage": {
+      "fail-to-load-foprtype": "Fail to load packages list",
+      "prid": "Package ID",
+      "prname": "Package name",
+      "prtype": "Package type",
+      "status": "Status",
+      "description": "Description",
+      "effective-date": "Effective date",
+      "expiration-date": "Expiration date",
+      "add-product": "Add package",
+      "add-product-success": "Add package successfully",
+      "add-product-fail": "Fail to add package",
+      "edit-product": "Edit package information",
+      "package-decentralize": "Package decentralize",
+      "edit-product-success": "Edit package information successfully",
+      "edit-product-fail": "Fail to edit package information",
+      "delete-product-success": "Delete package successfully",
+      "delete-product-fail": "Fail to delete package",
+      "invalid-input": {
+        "prid": "Please fill in package ID",
+        "prname": "Please fill in package name"
+      },
+      "fail-to-load-decentralize-info": "Fail to load decentralize info",
+      "save-decentralize-success": "Save decentralization successfully",
+      "save-decentralize-fail": "Fail to save decentralization",
+      "sure-delete-package": "Are you sure to delete this package?"
+    },
+    "register-package-group-or-acc": {
+      "assign-service-package-to-customer": "Assign service package to customer",
+      "package-name": "Package name",
+      "assign-type": "Assign type",
+      "cust-acc-group": "Customer/account group",
+      "effective-date": "Effective date",
+      "expiration-date": "Expiration date",
+      "assign": "Assign",
+      "manage-assign-groups": "Manage assign groups",
+      "group-cust-acc-name": "Group/customer account name",
+      "del-assign": "Del assign",
+      "fail-to-load-manage-assign-groups-list": "Fail to load manage assign groups list",
+      "invalid-selected": {
+        "currentfoProduct": "Invalid package",
+        "currentAssignType": "Invalid assign type",
+        "currentFoUser": "Invalid customer/account group"
+      },
+      "assign-service-package-to-customer-success": "Assign service package to customer successfully",
+      "assign-service-package-to-customer-fail": "Fail to assign service package to customer",
+      "remove-assign-success": "Unassign service package to customer successfully",
+      "remove-assign-fail": "Fail to unassign service package to customer",
+      "sure-delete-assign": "Are you sure to unassign service package to customer?"
+    }
+  },
+
+  "service": {
+    "title": "Comprehensive service",
+    "specialist": "Specialist Consultation",
+    "remote": "Remote Consultation",
+    "general": "General Checkup",
+    "lab": "Medical Testing",
+    "mental": "Mental Health",
+    "dental": "Dental Checkup",
+    "surgery": "Surgery Package",
+    "diabetes": "Diabetes Wellness",
+    "healthtest": "Health Test",
+    "nearby": "Healthcare Near You"
+  },
+
+  "specialty": {
+    "name": "Specialty",
+    "musculoskeletal": "Musculoskeletal",
+    "neurology": "Neurology",
+    "digestive": "Digestive System",
+    "cardiology": "Cardiology",
+    "ent": "Ear, Nose & Throat",
+    "spine": "Spine",
+    "traditional_medicine": "Traditional Medicine",
+    "acupuncture": "Acupuncture",
+    "obstetrics_gynecology": "Obstetrics & Gynecology"
+  },
+
+  "hospital": {
+    "name": "Medical Facility",
+    "vietduc": "Viet Duc Friendship Hospital",
+    "choray": "Cho Ray Hospital",
+    "doctorcheck": "Doctor Check - Screening for a Longer Life",
+    "fv": "FV Hospital",
+    "anviet": "An Viet General Hospital",
+    "anphuoc": "An Phuoc Internal Medicine Clinic"
+  },
+
+  "sidemenu": {
+    "home": "Home",
+    "handbook": "Handbook",
+    "partnership": "Partnership",
+    "business_health": "Business Health",
+    "clinic_digital": "Clinic Digital Transformation",
+    "recruitment": "Recruitment"
+  }
 }
