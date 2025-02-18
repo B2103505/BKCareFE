@@ -1,0 +1,43 @@
+.side-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000; /* Đảm bảo modal hiển thị trên cùng */
+
+  background-color: rgb(126, 126, 126, 0.5);
+}
+
+.side-menu_container {
+  position: fixed; /*Nằm riêng lẻ*/
+  z-index: 1000; /* Đảm bảo modal hiển thị trên cùng */
+
+  /* Kích thước của modal toàn chiều dài */
+  height: 100vh;
+  width: 16vw;
+  background-color: rgb(241, 241, 241);
+
+  /* Nằm sát bên trái */
+  top: 0;
+  left: 0;
+}
+
+.side-menu__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu__option {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+  padding: 1rem 0;
+  padding-left: 0.8rem;
+}
+.side-menu__option a {
+  text-decoration: none;
+  color: rgb(69, 203, 224);
+
+  font-size: 1.2rem;
+}
