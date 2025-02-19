@@ -18,6 +18,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  gap: 1rem;
+
   /* background: white;
   padding: 20px;
   border-radius: 10px;
@@ -61,7 +63,7 @@
 }
 
 /* Lịch khám */
-.schedule p {
+.schedule_time p {
   font-size: 1.3rem;
 
   margin-bottom: 0.5rem;
@@ -76,8 +78,8 @@
 .time_exam button {
   border: none;
   height: 2rem;
-  width: 6.5rem;
+  width: 7rem;
 
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
