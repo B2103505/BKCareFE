@@ -37,7 +37,7 @@ function ModalBK({ service, onclose }) {
             </div>
           </div>
 
-          <div className="schedule">
+          <div className="schedule_time">
             <p>Lịch Khám</p>
             <div className="schedule_container">
               {schedule_doctor.map((item, index) => (
