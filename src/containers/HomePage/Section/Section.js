@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DragScroll from "./DragScroll";
+import DragScroll from "./Function/DragScroll";
 import ModalBK from "./Modal/ModalBK";
 
 import { FormattedMessage } from "react-intl";

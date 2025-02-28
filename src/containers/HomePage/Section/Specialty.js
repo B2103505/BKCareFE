@@ -11,24 +11,15 @@ import Section from "./Section";
 class Specialty extends Component {
   render() {
     const specialties = [
-      {
-        img: require("../../../assets/images/specialty-icon/1.webp").default,
-        text: "specialty.musculoskeletal",
-      },
-      { img: require("../../../assets/images/specialty-icon/2.webp").default, text: "specialty.neurology" },
-      { img: require("../../../assets/images/specialty-icon/3.webp").default, text: "specialty.digestive" },
-      { img: require("../../../assets/images/specialty-icon/4.webp").default, text: "specialty.cardiology" },
-      { img: require("../../../assets/images/specialty-icon/5.webp").default, text: "specialty.ent" },
-      { img: require("../../../assets/images/specialty-icon/6.webp").default, text: "specialty.spine" },
-      {
-        img: require("../../../assets/images/specialty-icon/7.webp").default,
-        text: "specialty.traditional_medicine",
-      },
-      { img: require("../../../assets/images/specialty-icon/8.webp").default, text: "specialty.acupuncture" },
-      {
-        img: require("../../../assets/images/specialty-icon/9.webp").default,
-        text: "specialty.obstetrics_gynecology",
-      },
+      { img: "/specialty-icon/1.webp", text: "specialty.musculoskeletal" },
+      { img: "/specialty-icon/2.webp", text: "specialty.neurology" },
+      { img: "/specialty-icon/3.webp", text: "specialty.digestive" },
+      { img: "/specialty-icon/4.webp", text: "specialty.cardiology" },
+      { img: "/specialty-icon/5.webp", text: "specialty.ent" },
+      { img: "/specialty-icon/6.webp", text: "specialty.spine" },
+      { img: "/specialty-icon/7.webp", text: "specialty.traditional_medicine" },
+      { img: "/specialty-icon/8.webp", text: "specialty.acupuncture" },
+      { img: "/specialty-icon/9.webp", text: "specialty.obstetrics_gynecology" },
     ];
 
     return <Section title="specialty.name" items={specialties} />;
