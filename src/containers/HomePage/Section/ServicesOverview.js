@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage, injectIntl } from "react-intl";
 import "./ServicesOverview.scss";
+import ModalService from "./Modal/ModalService";
+import services from "../Data/serviceData";
 
 class ServicesOverview extends Component {
   constructor(props) {
@@ -17,18 +19,6 @@ class ServicesOverview extends Component {
 
   render() {
     const { intl } = this.props;
-    const services = [
-      { img: "/icon-service/1.webp", id: "service.specialist" },
-      { img: "/icon-service/2.webp", id: "service.remote" },
-      { img: "/icon-service/3.webp", id: "service.general" },
-      { img: "/icon-service/4.webp", id: "service.lab" },
-      { img: "/icon-service/5.webp", id: "service.mental" },
-      { img: "/icon-service/6.webp", id: "service.dental" },
-      { img: "/icon-service/7.webp", id: "service.surgery" },
-      { img: "/icon-service/8.webp", id: "service.diabetes" },
-      { img: "/icon-service/9.webp", id: "service.healthtest" },
-      { img: "/icon-service/10.webp", id: "service.nearby" },
-    ];
 
     return (
       <div className="services-overview">
@@ -47,6 +37,8 @@ class ServicesOverview extends Component {
             </div>
           ))}
         </div>
+
+        {this.state.selectedService && <ModalService onclose={() => this.setSelectedService(null)} />}
       </div>
     );
   }
