@@ -177,5 +177,16 @@
     "business_health": "Business Health",
     "clinic_digital": "Clinic Digital Transformation",
     "recruitment": "Recruitment"
+  },
+
+  "rm_service": {
+    "title1": "Remote Psychological Consultation & Therapy",
+    "title2": "Remote Mental Health Services",
+    "title3": "Remote Dermatology Consultation",
+    "title4": "Remote Orthopedic Consultation",
+    "title5": "Remote Gastroenterology Consultation",
+    "title6": "Remote Cardiology Consultation",
+    "title7": "Remote ENT (Ear, Nose, Throat) Consultation",
+    "title8": "Remote Neurology Consultation"
   }
 }

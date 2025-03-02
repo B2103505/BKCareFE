@@ -177,5 +177,16 @@
     "business_health": "Sức khỏe doanh nghiệp",
     "clinic_digital": "Chuyển đổi số Phòng Khám",
     "recruitment": "Tuyển dụng"
+  },
+
+  "rm_service": {
+    "title1": "Tư vấn, trị liệu Tâm lý từ xa",
+    "title2": "Sức khỏe tâm thần từ xa",
+    "title3": "Bác sĩ Da liễu từ xa",
+    "title4": "Bác sĩ Cơ-Xương-Khớp từ xa",
+    "title5": "Bác sĩ Tiêu hóa từ xa",
+    "title6": "Bác sĩ Tim mạch từ xa",
+    "title7": "Bác sĩ Tai-Mũi-Họng từ xa",
+    "title8": "Bác sĩ Thần kinh từ xa"
   }
 }
