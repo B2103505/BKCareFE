@@ -1,11 +1,11 @@
 import React from "react";
-import specialties from "../../Data/specialtyData";
 import { FormattedMessage } from "react-intl";
 
 import "./ModalService.scss";
+import rm_services from "../../Data/rm_serviceData";
 
-function ModalService({ onclose }) {
-  if (!specialties || specialties.length === 0) return null;
+function Modal_rmService({ onclose }) {
+  if (!rm_services || rm_services.length === 0) return null;
 
   return (
     <div className="modal-service">
@@ -15,11 +15,10 @@ function ModalService({ onclose }) {
         </span>
 
         <h2>
-          <FormattedMessage id="service.specialist" />
+          <FormattedMessage id="service.remote" />
         </h2>
-
         <div className="specialty-links-container_md">
-          {specialties.map((item, index) => (
+          {rm_services.map((item, index) => (
             <div className="specialty-container_md" key={index}>
               <button className="specialty_option">
                 <div>
@@ -37,4 +36,4 @@ function ModalService({ onclose }) {
   );
 }
 
-export default ModalService;
+export default Modal_rmService;

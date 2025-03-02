@@ -11,14 +11,15 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   z-index: 1000; /* Đảm bảo modal hiển thị trên cùng */
 
-  opacity: 1;
+  overflow: hidden;
 
   .specialty-links-container_md {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    align-items: center;
-    width: 100%;
+    max-height: 60vh; /* Giới hạn chiều cao */
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+    padding-right: 10px; /* Tránh bị thanh cuộn đè */
 
     .specialty-container_md {
       flex: 1 1 calc(18%);
