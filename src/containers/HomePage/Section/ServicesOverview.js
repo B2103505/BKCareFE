@@ -2,19 +2,27 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage, injectIntl } from "react-intl";
 import "./ServicesOverview.scss";
+
 import ModalService from "./Modal/ModalService";
 import services from "../Data/serviceData";
+import Modal_rmService from "./Modal/Modal_rmService";
 
 class ServicesOverview extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedService: null,
+      selectedModal: null,
     };
   }
 
-  setSelectedService = (service) => {
-    this.setState({ selectedService: service });
+  setSelectedService = (modalType) => {
+    // this.setState({ selectedService: service });
+    // Lựa chọn bằng modalType
+    this.setState({ selectedModal: modalType });
+  };
+
+  closeServiceModal = () => {
+    this.setState({ selectedModal: null });
   };
 
   render() {
@@ -29,7 +37,7 @@ class ServicesOverview extends Component {
           {services.map((service, index) => (
             <div className="service-container" key={index}>
               <img src={service.img} alt={intl.formatMessage({ id: service.id })} className="service-img" />
-              <button className="service-link" onClick={() => this.setSelectedService(service)}>
+              <button className="service-link" onClick={() => this.setSelectedService(service.modalType)}>
                 <div className="service-item">
                   <FormattedMessage id={service.id} />
                 </div>
@@ -37,8 +45,8 @@ class ServicesOverview extends Component {
             </div>
           ))}
         </div>
-
-        {this.state.selectedService && <ModalService onclose={() => this.setSelectedService(null)} />}
+        {this.state.selectedModal === "remote" && <Modal_rmService onclose={this.closeServiceModal} />}
+        {this.state.selectedModal === "specialist" && <ModalService onclose={this.closeServiceModal} />}
       </div>
     );
   }
