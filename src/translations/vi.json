@@ -195,5 +195,30 @@
     "title2": "Tư vấn, trị liệu Tâm lý từ xa",
     "title3": "Sức khỏe tâm thần từ xa",
     "title4": "Tư vấn, trị liệu Tâm lý"
+  },
+
+  "surgery_name": {
+    "title1": "Phẫu thuật Nam học",
+    "title2": "Phẫu thuật Thận - Tiết niệu",
+    "title3": "Phẫu thuật Tai - Mũi - Họng",
+    "title4": "Phẫu thuật Hậu môn - Trực tràng",
+    "title5": "Phẫu thuật mắt",
+    "title6": "Thủ thuật Suy giãn tĩnh mạch",
+    "title7": "Phẫu thuật tuyến giáp"
+  },
+
+  "healthtest": {
+    "title1": "Bài Test đánh giá trầm cảm Beck",
+    "title2": "Bài test trầm cảm trẻ vị thành niên RADS (10 - 20 tuổi)",
+    "title3": "Bài test đánh giá triệu chứng sức khỏe EarlySigns",
+    "title4": "Bài Test đánh giá Lo âu - Trầm cảm - Stress (DASS 21)",
+    "title5": "Bài Test đánh giá mức độ trầm cảm sau sinh EPDS",
+    "title6": "Bài test đánh giá lo âu ZUNG",
+    "title7": "Bài Test: Bạn có triệu chứng của Sốt xuất huyết?",
+    "title8": "Bài Test: Bạn có biểu hiện của dị ứng thời tiết?",
+    "title9": "Bài Test: Bạn có triệu chứng sớm của bệnh tiểu đường",
+    "title10": "Bài Test đánh giá sức khỏe răng miệng",
+    "title11": "Thang đo tăng động giảm chú ý ADHD VANDERBILT (Phiên bản cho cha mẹ)",
+    "title12": "Bài Test: Đánh giá khả năng trồng răng Implant"
   }
 }

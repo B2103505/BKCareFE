@@ -195,5 +195,30 @@
     "title2": "Remote psychological counseling and therapy",
     "title3": "Remote mental health",
     "title4": "Psychological counseling and therapy"
+  },
+
+  "surgery_name": {
+    "title1": "Andrology Surgery",
+    "title2": "Kidney - Urology Surgery",
+    "title3": "Ear - Nose - Throat (ENT) Surgery",
+    "title4": "Anorectal Surgery",
+    "title5": "Eye Surgery",
+    "title6": "Varicose Vein Procedure",
+    "title7": "Thyroid Surgery"
+  },
+
+  "healthtest": {
+    "title1": "Beck Depression Inventory Test",
+    "title2": "RADS Depression Test for Adolescents (10 - 20 years old)",
+    "title3": "EarlySigns Health Symptoms Assessment Test",
+    "title4": "Anxiety - Depression - Stress Assessment Test (DASS 21)",
+    "title5": "Edinburgh Postnatal Depression Scale (EPDS) Test",
+    "title6": "Zung Anxiety Scale Test",
+    "title7": "Test: Do You Have Symptoms of Dengue Fever?",
+    "title8": "Test: Do You Show Symptoms of Weather Allergies?",
+    "title9": "Test: Do You Have Early Symptoms of Diabetes?",
+    "title10": "Oral Health Assessment Test",
+    "title11": "ADHD Vanderbilt Attention Deficit Scale (Parent Version)",
+    "title12": "Test: Dental Implant Suitability Assessment"
   }
 }
