@@ -36,7 +36,11 @@ class ServicesOverview extends Component {
         </h1>
         <div className="service-links-container">
           {services.map((service, index) => (
-            <div className="service-container" key={index}>
+            <div
+              className="service-container"
+              key={index}
+              style={{ backgroundImage: "url('/icon-service/bg.webp')" }}
+            >
               <img src={service.img} alt={intl.formatMessage({ id: service.id })} className="service-img" />
               <button className="service-link" onClick={() => this.setSelectedService(service.modalType)}>
                 <div className="service-item">
