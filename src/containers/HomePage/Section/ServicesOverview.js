@@ -6,6 +6,7 @@ import "./ServicesOverview.scss";
 import ModalService from "./Modal/ModalService";
 import services from "../Data/serviceData";
 import Modal_rmService from "./Modal/Modal_rmService";
+import Modal_mtHeatlth from "./Modal/Modal_mtHealth";
 
 class ServicesOverview extends Component {
   constructor(props) {
@@ -45,8 +46,9 @@ class ServicesOverview extends Component {
             </div>
           ))}
         </div>
-        {this.state.selectedModal === "remote" && <Modal_rmService onclose={this.closeServiceModal} />}
         {this.state.selectedModal === "specialist" && <ModalService onclose={this.closeServiceModal} />}
+        {this.state.selectedModal === "remote" && <Modal_rmService onclose={this.closeServiceModal} />}
+        {this.state.selectedModal === "mental" && <Modal_mtHeatlth onclose={this.closeServiceModal} />}
       </div>
     );
   }

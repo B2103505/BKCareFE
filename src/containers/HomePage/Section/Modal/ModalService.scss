@@ -26,7 +26,7 @@
       max-width: calc(18%);
 
       .specialty_option {
-        width: 100%;
+        height: 100%; /* Giúp các ô có chiều cao đồng đều */
         display: flex;
         flex-direction: column;
         align-items: center;

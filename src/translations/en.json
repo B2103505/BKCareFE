@@ -188,5 +188,12 @@
     "title6": "Remote Cardiology Consultation",
     "title7": "Remote ENT (Ear, Nose, Throat) Consultation",
     "title8": "Remote Neurology Consultation"
+  },
+
+  "mental_health": {
+    "title1": "Mental health",
+    "title2": "Remote psychological counseling and therapy",
+    "title3": "Remote mental health",
+    "title4": "Psychological counseling and therapy"
   }
 }
