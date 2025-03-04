@@ -220,5 +220,16 @@
     "title10": "Bài Test đánh giá sức khỏe răng miệng",
     "title11": "Thang đo tăng động giảm chú ý ADHD VANDERBILT (Phiên bản cho cha mẹ)",
     "title12": "Bài Test: Đánh giá khả năng trồng răng Implant"
+  },
+
+  "doctor": {
+    "main_title": "Bác sĩ nổi bật",
+    "chuyen": "Chuyên khoa",
+    "name1": "Võ Đặng",
+    "name2": "Phạm Vủ Lâm",
+    "title1": "Giáo sư",
+    "title2": "Tiến sĩ",
+    "major1": "Đa Khoa",
+    "major2": "Khoa nội"
   }
 }

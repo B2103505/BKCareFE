@@ -220,5 +220,16 @@
     "title10": "Oral Health Assessment Test",
     "title11": "ADHD Vanderbilt Attention Deficit Scale (Parent Version)",
     "title12": "Test: Dental Implant Suitability Assessment"
+  },
+
+  "doctor": {
+    "main_title": "Featured Doctors",
+    "chuyen": "Specialty",
+    "name1": "Vo Dang",
+    "name2": "Pham Vu Lam",
+    "title1": "Professor",
+    "title2": "Doctor",
+    "major1": "General Medicine",
+    "major2": "Internal Medicine"
   }
 }

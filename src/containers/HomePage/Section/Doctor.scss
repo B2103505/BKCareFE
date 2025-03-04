@@ -1,0 +1,25 @@
+.background_doctor {
+  height: 50vh;
+
+  .doctor_cont {
+    display: flex;
+
+    .dc_info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        border: 1px solid black;
+        border-radius: 50%;
+
+        height: 30%;
+      }
+      span {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
