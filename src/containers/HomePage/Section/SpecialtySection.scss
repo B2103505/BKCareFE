@@ -3,53 +3,85 @@
   justify-content: space-between;
   gap: 30px;
   padding-top: 2rem;
-}
+  padding-bottom: 2rem;
 
-.specialty-container {
-  button {
-    padding: 20px;
-    height: 100%;
-    width: 100%;
+  .specialty-container {
+    flex: 1;
+    flex: 0 0 calc(33.33% - 20px); /* Đảm bảo chỉ 3 mục hiển thị đầy đủ trong khung */
+    scroll-snap-align: center; /* Căn giữa khi cuộn */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    button {
+      padding: 20px;
+      height: 100%;
+      width: 100%;
 
-    text-decoration: none;
-    border: 2px solid rgb(218, 233, 236);
-    border-radius: 20px;
-    background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-    &:hover {
-      cursor: pointer;
-    }
+      text-decoration: none;
+      border: 2px solid rgb(218, 233, 236);
+      border-radius: 20px;
+      background-color: transparent;
 
-    div {
-      height: 15rem;
-      width: 15rem;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-
-        padding-bottom: 1rem;
+      &:hover {
+        cursor: pointer;
       }
-    }
 
-    span {
-      color: black;
-      font-size: 1.4rem;
-      font-weight: bold;
-      text-align: center;
+      div {
+        height: 15rem;
+        width: 15rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+
+          padding-bottom: 1rem;
+        }
+      }
+
+      span {
+        color: black;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: center;
+      }
     }
   }
 }
 
-.specialty-container {
-  flex: 1;
+.specialty-links-container.expanded {
+  flex-wrap: wrap;
+  max-height: 500px; /* Giới hạn chiều cao */
 
-  flex: 0 0 calc(33.33% - 20px); /* Đảm bảo chỉ 3 mục hiển thị đầy đủ trong khung */
-  scroll-snap-align: center; /* Căn giữa khi cuộn */
+  overflow: hidden;
+  overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+
+  /* Ẩn thanh cuộn trên Chrome, Edge và Safari */
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    display: none;
+  }
+
+  /* Ẩn thanh cuộn trên Firefox */
+  scrollbar-width: none;
+}
+
+.extension_btn {
+  position: relative;
+  border-bottom: 1px solid rgb(218, 233, 236);
+
+  .ext_btn {
+    position: absolute;
+    right: 50%;
+
+    border: none;
+    background-color: transparent;
+    color: rgb(139, 220, 236);
+
+    font-size: large;
+  }
 }
