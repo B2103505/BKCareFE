@@ -1,8 +1,12 @@
 .background_doctor {
+  display: flex;
   height: 50vh;
 
   .doctor_cont {
     display: flex;
+    gap: 4rem;
+    height: 100%;
+    padding-top: 2rem;
 
     .dc_info {
       display: flex;
@@ -14,11 +18,19 @@
         border: 1px solid black;
         border-radius: 50%;
 
-        height: 30%;
+        height: 40%;
       }
       span {
-        font-weight: bold;
-        font-size: 1.5rem;
+        &:nth-of-type(1) {
+          font-size: 3vh;
+          font-weight: bold;
+        }
+        &:nth-of-type(2) {
+          font-size: 2.5vh;
+        }
+        &:nth-of-type(3) {
+          font-size: 2vh;
+        }
       }
     }
   }

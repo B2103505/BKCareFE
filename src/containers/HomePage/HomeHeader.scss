@@ -35,17 +35,19 @@
     }
 
     .center-content {
-      width: 50%;
+      flex-grow: 1; // Cho phép content tự co giãn mà không bị bó cứng
       display: flex;
+      justify-content: space-between;
 
       .content-bar {
         display: flex;
-        width: 60%;
+        flex: 1;
+        max-width: 55%;
         align-items: center;
         justify-content: space-between;
 
         .child-content {
-          font-size: 1.2rem;
+          font-size: 2.5vh;
 
           &:hover {
             cursor: pointer;
@@ -55,8 +57,10 @@
 
       .search-bar {
         display: flex;
-        width: 40%;
+        flex: 1;
+        max-width: 35%;
         margin-left: 1.2rem;
+        margin-right: 1.2rem;
         position: relative;
         align-items: center;
 
