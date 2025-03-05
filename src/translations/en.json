@@ -151,13 +151,24 @@
     "name": "Specialty",
     "musculoskeletal": "Musculoskeletal",
     "neurology": "Neurology",
-    "digestive": "Digestive System",
+    "digestive": "Digestive",
     "cardiology": "Cardiology",
-    "ent": "Ear, Nose & Throat",
+    "ent": "Ear, Nose, and Throat",
     "spine": "Spine",
     "traditional_medicine": "Traditional Medicine",
     "acupuncture": "Acupuncture",
-    "obstetrics_gynecology": "Obstetrics & Gynecology"
+    "obstetrics_gynecology": "Obstetrics and Gynecology",
+    "prenatal_ultrasound": "Prenatal Ultrasound",
+    "pediatrics": "Pediatrics",
+    "dermatology": "Dermatology",
+    "hepatitis": "Hepatitis",
+    "mental_health": "Mental Health",
+    "allergy_immunology": "Allergy and Immunology",
+    "respiratory_pulmonology": "Respiratory - Pulmonology",
+    "neurosurgery": "Neurosurgery",
+    "andrology": "Andrology",
+    "ophthalmology": "Ophthalmology",
+    "nephrology_urology": "Nephrology - Urology"
   },
 
   "hospital": {

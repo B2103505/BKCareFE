@@ -157,7 +157,18 @@
     "spine": "Cột Sống",
     "traditional_medicine": "Y Học Cổ Truyền",
     "acupuncture": "Châm Cứu",
-    "obstetrics_gynecology": "Sản Phụ Khoa"
+    "obstetrics_gynecology": "Sản Phụ Khoa",
+    "prenatal_ultrasound": "Siêu âm thai",
+    "pediatrics": "Nhi khoa",
+    "dermatology": "Da liễu",
+    "hepatitis": "Bệnh Viêm gan",
+    "mental_health": "Sức khỏe tâm thần",
+    "allergy_immunology": "Dị ứng miễn dịch",
+    "respiratory_pulmonology": "Hô hấp - Phổi",
+    "neurosurgery": "Ngoại thần kinh",
+    "andrology": "Nam học",
+    "ophthalmology": "Chuyên khoa Mắt",
+    "nephrology_urology": "Thận - Tiết niệu"
   },
 
   "hospital": {

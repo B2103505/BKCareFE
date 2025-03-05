@@ -28,9 +28,13 @@ function DragScroll({ children }) {
   const updateButtonVisibility = () => {
     const container = containerRef.current;
     if (container) {
-      setCanScrollLeft(container.scrollLeft > 0);
-      setCanScrollRight(container.scrollLeft + container.clientWidth < container.scrollWidth);
+      setCanScrollLeft(Math.floor(container.scrollLeft) > 0);
+      setCanScrollRight(Math.floor(container.scrollLeft) + 1 + container.clientWidth < container.scrollWidth);
     }
+
+    console.log(container.scrollLeft);
+    console.log(container.clientWidth);
+    console.log(container.scrollWidth);
   };
 
   // Sự kiện cuộn container
