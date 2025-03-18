@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ModalBK.scss";
+import { FormattedMessage } from "react-intl";
 
 function ModalBK({ service, onclose }) {
   const schedule_doctor = [
@@ -29,7 +30,9 @@ function ModalBK({ service, onclose }) {
             <div className="doctor-info">
               <h2>{service.doctor_name}</h2>
               <div>
-                <p>Là Bác sĩ có 21 năm kinh nghiệm về lĩnh vực {service.text}.</p>
+                <p>
+                  Là Bác sĩ có 21 năm kinh nghiệm về lĩnh vực <FormattedMessage id={service.text} />.
+                </p>
                 <p>Được mọi người yêu mến và ủng hộ.</p>
                 <p></p>
                 <p>Chính vì vậy hãy đặt lịch ngay để có thể có được diễm phúc được vị thần y này chữa bệnh</p>
