@@ -18,8 +18,13 @@
     flex-wrap: wrap;
     gap: 1rem;
     max-height: 60vh; /* Giới hạn chiều cao */
-    overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+    overflow-y: scroll; /* Cho phép cuộn nếu nội dung quá dài */
     padding-right: 10px; /* Tránh bị thanh cuộn đè */
+    scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+
+    .specialty-links-container_md::-webkit-scrollbar {
+      display: none; /* Ẩn thanh cuộn trên Chrome, Edge, Safari */
+    }
 
     .specialty-container_md {
       flex: 1 1 calc(18%);

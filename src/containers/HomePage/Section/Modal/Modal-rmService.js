@@ -4,7 +4,7 @@ import { FormattedMessage } from "react-intl";
 import "./ModalService.scss";
 import rm_services from "../../Data/rm_serviceData";
 
-function Modal_rmService({ onclose }) {
+function ModalRmService({ onclose }) {
   if (!rm_services || rm_services.length === 0) return null;
 
   return (
@@ -36,4 +36,4 @@ function Modal_rmService({ onclose }) {
   );
 }
 
-export default Modal_rmService;
+export default ModalRmService;

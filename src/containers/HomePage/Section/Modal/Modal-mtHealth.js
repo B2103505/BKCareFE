@@ -4,7 +4,7 @@ import { FormattedMessage } from "react-intl";
 import "./ModalService.scss";
 import mental_health from "../../Data/mental_heathData";
 
-function Modal_mtHeatlth({ onclose }) {
+function ModalMtHeatlth({ onclose }) {
   if (!mental_health || mental_health.length === 0) return null;
 
   return (
@@ -36,4 +36,4 @@ function Modal_mtHeatlth({ onclose }) {
   );
 }
 
-export default Modal_mtHeatlth;
+export default ModalMtHeatlth;

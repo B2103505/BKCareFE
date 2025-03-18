@@ -1,234 +1,217 @@
-.home-header-container {
-  height: 10vh;
+.home-header {
+  position: fixed;
   width: 100%;
+  height: 10vh;
   border: 1px solid red;
   background-color: rgb(237, 255, 250);
+  z-index: 1000; /* Giữ header ở trên cùng */
 
-  .home-header-content {
+  &__content {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-left: 10%;
     margin-right: 5%;
+  }
 
-    .left-content {
-      width: 20%;
+  &__left {
+    width: 20%;
+    display: flex;
+    align-items: center;
+
+    i {
+      font-size: 2rem;
+      color: gray;
+      cursor: pointer;
+    }
+  }
+
+  &__logo {
+    flex: 1;
+    cursor: pointer;
+
+    img {
+      width: 85%;
+      padding: 0 1rem;
+    }
+  }
+
+  &__center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: flex;
+    flex: 1;
+    max-width: 55%;
+    align-items: center;
+    justify-content: space-between;
+
+    &-item {
+      font-size: 2.5vh;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__search {
+    display: flex;
+    flex: 1;
+    max-width: 35%;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    position: relative;
+    align-items: center;
+
+    &-input {
+      width: 100%;
+      padding: 0.8rem;
+      padding-left: 2rem;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    i {
+      position: absolute;
+      left: 0.8rem;
+      cursor: pointer;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__cooperation,
+  &__schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+
+    p {
       display: flex;
       align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
 
-      .header-logo {
-        flex: 1;
-        cursor: pointer;
+  &__language {
+    display: flex;
 
-        img {
-          width: 85%;
-          padding: 0 1rem;
-        }
+    .language-option--vi,
+    .language-option--en {
+      margin: 0 10px;
+      cursor: pointer;
+      opacity: 0.6;
+
+      &.active {
+        opacity: 1;
       }
 
-      i {
-        font-size: 2rem;
+      span {
         color: gray;
-        cursor: pointer;
+      }
+
+      &:hover {
+        opacity: 1;
       }
     }
 
-    .center-content {
-      flex-grow: 1; // Cho phép content tự co giãn mà không bị bó cứng
-      display: flex;
-      justify-content: space-between;
-
-      .content-bar {
-        display: flex;
-        flex: 1;
-        max-width: 55%;
-        align-items: center;
-        justify-content: space-between;
-
-        .child-content {
-          font-size: 2.5vh;
-
-          &:hover {
-            cursor: pointer;
-          }
-        }
-      }
-
-      .search-bar {
-        display: flex;
-        flex: 1;
-        max-width: 35%;
-        margin-left: 1.2rem;
-        margin-right: 1.2rem;
-        position: relative;
-        align-items: center;
-
-        .search-input {
-          width: 100%;
-          padding: 0.8rem;
-          padding-left: 2rem;
-          border-radius: 25px;
-
-          font-weight: bold;
-          font-size: 1.1rem;
-        }
-
-        i {
-          position: absolute;
-          left: 0.8rem;
-          cursor: pointer;
-        }
-      }
+    .language-option--vi.active span {
+      color: rgb(227, 68, 68) !important; // ✅ Đảm bảo màu chữ thay đổi
     }
 
-    .right-content {
-      display: flex;
-      align-items: center; /* Căn giữa theo chiều dọc */
-      gap: 20px; /* Tạo khoảng cách giữa các phần tử */
-
-      .cooperation,
-      .schedule {
-        display: flex;
-        flex-direction: column; /* Stack icon + text theo chiều dọc */
-        align-items: center; /* Căn giữa theo chiều ngang */
-        padding-top: 1rem;
-
-        p {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-        }
-      }
-
-      .set-language {
-        display: flex;
-        // // flex-direction: column;
-        // text-align: center;
-        // padding: 10px;
-        // margin-top: 5px;
-
-        .flag-language-vi {
-          margin: 0 10px;
-          cursor: pointer;
-          opacity: 0.6;
-
-          &.active {
-            opacity: 1;
-
-            span {
-              color: rgb(227, 68, 68);
-            }
-          }
-
-          &:hover {
-            opacity: 1;
-          }
-        }
-
-        .flag-language-en {
-          margin: 0 10px;
-          cursor: pointer;
-          opacity: 0.6;
-
-          &.active {
-            opacity: 1;
-
-            span {
-              color: blue;
-            }
-          }
-
-          &:hover {
-            opacity: 1;
-          }
-        }
-      }
+    .language-option--en.active span {
+      color: blue !important; // ✅ Đảm bảo màu chữ thay đổi
     }
   }
 }
 
-.home-header-banner {
+.home-banner {
   display: flex;
   flex-direction: column;
   background-image: url("../../assets/introduce.webp");
   background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
+  padding-top: 15vh;
 
-  .introduce-section {
+  &__intro {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.1));
-    /* Không lặp ảnh */
     width: 100%;
     height: 31.25rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     justify-content: center;
-    /* Căn giữa theo chiều ngang */
     align-items: center;
-    /* Căn giữa theo chiều dọc */
     height: 65%;
 
     h2 {
       text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
-      /* Bóng chữ sáng giúp làm nổi bật chữ */
       text-align: center;
       font-size: 2.5rem;
       font-weight: bold;
     }
+  }
 
-    .Search-Recommend {
-      width: 50%;
-      height: 30%;
-      display: flex;
-      // justify-content: center;
-      // align-items: center;
-      margin: 0 auto;
-      padding: 10px;
-      border-radius: 10px;
-      background-color: white;
-      flex-direction: column;
+  &__search-container {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    flex-direction: column;
+  }
 
-      .Search-Area {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 5px auto;
-        padding: 5px;
-        border-radius: 10px;
-        background-color: white;
+  &__search-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
 
-        .search-input {
-          height: 100%;
-          width: 100%;
-          background: transparent;
-          border: none;
-          outline: none;
-        }
+    .home-header__search-input {
+      height: 100%;
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+    }
 
-        i {
-          font-size: 20px;
-          cursor: pointer;
-        }
-      }
-
-      .Recommend-Area {
-        float: left !important;
-        cursor: pointer;
-
-        i {
-          margin: 0 10px;
-          cursor: pointer;
-        }
-      }
+    i {
+      font-size: 20px;
+      cursor: pointer;
     }
   }
 
-  .linear-gra-background {
+  &__recommend {
+    float: left !important;
+    cursor: pointer;
+
+    i {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  }
+
+  &__gradient {
     height: 35%;
     background-image: linear-gradient(rgba(126, 126, 126, 0.25), rgba(255, 255, 255, 0.1));
   }

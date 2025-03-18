@@ -35,20 +35,20 @@ class HomeHeader extends Component {
 
     return (
       <React.Fragment>
-        <div className="home-header-container">
-          <div className="home-header-content">
-            <div className="left-content">
+        <div className="home-header">
+          <div className="home-header__content">
+            <div className="home-header__left">
               <i className="fas fa-bars" onClick={this.toggleMenu}></i>
-              <div className="header-logo">
+              <div className="home-header__logo">
                 <a href="#">
                   <img src={logo} alt="Logo" />
                 </a>
               </div>
             </div>
 
-            <div className="center-content">
-              <div className="content-bar">
-                <div className="child-content">
+            <div className="home-header__center">
+              <div className="home-header__nav">
+                <div className="home-header__nav-item">
                   <div>
                     <b>
                       {" "}
@@ -57,7 +57,7 @@ class HomeHeader extends Component {
                   </div>
                 </div>
 
-                <div className="child-content">
+                <div className="home-header__nav-item">
                   <div>
                     <b>
                       <FormattedMessage id="homeheader.tag-home" />
@@ -65,7 +65,7 @@ class HomeHeader extends Component {
                   </div>
                 </div>
 
-                <div className="child-content">
+                <div className="home-header__nav-item">
                   <div>
                     <b>
                       <FormattedMessage id="homeheader.tag-hospital" />
@@ -73,7 +73,7 @@ class HomeHeader extends Component {
                   </div>
                 </div>
 
-                <div className="child-content">
+                <div className="home-header__nav-item">
                   <div>
                     <b>
                       {" "}
@@ -83,18 +83,18 @@ class HomeHeader extends Component {
                 </div>
               </div>
 
-              <div className="search-bar">
+              <div className="home-header__search">
                 <input
                   type="text"
-                  className="search-input"
+                  className="home-header__search-input"
                   placeholder={intl.formatMessage({ id: "homeheader.search" })}
                 ></input>
                 <i className="fas fa-search"></i>
               </div>
             </div>
 
-            <div className="right-content">
-              <div className="cooperation">
+            <div className="home-header__right">
+              <div className="home-header__cooperation">
                 <i className="far fa-handshake"></i>
                 <p>
                   {" "}
@@ -102,19 +102,23 @@ class HomeHeader extends Component {
                 </p>
               </div>
 
-              <div className="schedule">
+              <div className="home-header__schedule">
                 <i className="far fa-clock"></i>
                 <p>
                   {" "}
                   <FormattedMessage id="homeheader.appointment" />
                 </p>
               </div>
-              <div className="set-language">
-                <div className={language === LANGUAGES.VI ? "flag-language-vi active" : "flag-language-vi"}>
+              <div className="home-header__language">
+                <div
+                  className={language === LANGUAGES.VI ? "language-option--vi active" : "language-option--vi"}
+                >
                   <span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VI</span>
                 </div>
 
-                <div className={language === LANGUAGES.EN ? "flag-language-en active" : "flag-language-en"}>
+                <div
+                  className={language === LANGUAGES.EN ? "language-option--en active" : "language-option--en"}
+                >
                   <span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span>
                 </div>
               </div>
@@ -122,8 +126,8 @@ class HomeHeader extends Component {
           </div>
         </div>
 
-        <div className="home-header-banner">
-          <div className="introduce-section">
+        <div className="home-banner">
+          <div className="home-banner__intro">
             <h2>
               {" "}
               <FormattedMessage id="banner.title1"></FormattedMessage>
@@ -132,23 +136,23 @@ class HomeHeader extends Component {
               <FormattedMessage id="banner.title2"></FormattedMessage>
             </h2>
 
-            <div className="Search-Recommend">
-              <div className="Search-Area">
+            <div className="home-banner__search-container">
+              <div className="home-banner__search-box">
                 <input
                   type="text"
-                  className="search-input"
+                  className="home-header__search-input"
                   placeholder={intl.formatMessage({ id: "banner.search" })}
                 ></input>
                 <i className="fas fa-paper-plane"></i>
               </div>
 
-              <div className="Recommend-Area">
+              <div className="home-banner__recommend">
                 <i className="fas fa-hospital"></i>
                 <FormattedMessage id="banner.findHospital"></FormattedMessage>
               </div>
             </div>
           </div>
-          <div className="linear-gra-background"></div>
+          <div className="home-banner__gradient"></div>
         </div>
 
         <SideMenu isOpen={this.state.isMenuOpen} onClose={() => this.setState({ isMenuOpen: false })} />
