@@ -30,6 +30,20 @@
       "manage-handbook": "Quản lý cẩm nang"
     }
   },
+  "manage-user": {
+    "add": "Thêm mới người dùng",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "phoneNumber": "Số điện thoại",
+    "address": "Địa chỉ",
+    "Gender": "Giới tính",
+    "position": "Chức danh",
+    "roleId": "Vai trò",
+    "Image": "Hình ảnh đại diện",
+    "save": "Lưu user"
+  },
   "service": {
     "title": "Dịch vụ toàn diện",
     "specialist": "Khám Chuyên Khoa",

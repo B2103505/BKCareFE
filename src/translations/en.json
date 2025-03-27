@@ -30,6 +30,20 @@
       "manage-handbook": "Manage HandBook"
     }
   },
+  "manage-user": {
+    "add": "Add new user",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phoneNumber": "Phone Number",
+    "address": "Address",
+    "Gender": "Gender",
+    "position": "position",
+    "roleId": "Role",
+    "Image": "Image",
+    "save": "Save user"
+  },
   "service": {
     "title": "Comprehensive service",
     "specialist": "Specialist Consultation",
