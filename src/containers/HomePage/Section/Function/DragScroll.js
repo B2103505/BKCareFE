@@ -31,10 +31,6 @@ function DragScroll({ children }) {
       setCanScrollLeft(Math.floor(container.scrollLeft) > 0);
       setCanScrollRight(Math.floor(container.scrollLeft) + 1 + container.clientWidth < container.scrollWidth);
     }
-
-    console.log(container.scrollLeft);
-    console.log(container.clientWidth);
-    console.log(container.scrollWidth);
   };
 
   // Sự kiện cuộn container

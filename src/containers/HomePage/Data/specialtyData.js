@@ -1,5 +1,5 @@
 const specialties = [
-  { img: "/specialty-icon/1.webp", text: "specialty.musculoskeletal" },
+  { img: "/specialty-icon/1.webp", text: "specialty.musculoskeletal", doctor_name: "Võ Đặng" },
   { img: "/specialty-icon/2.webp", text: "specialty.neurology" },
   { img: "/specialty-icon/3.webp", text: "specialty.digestive" },
   { img: "/specialty-icon/4.webp", text: "specialty.cardiology" },

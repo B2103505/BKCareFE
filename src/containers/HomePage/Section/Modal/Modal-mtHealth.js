@@ -1,7 +1,7 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
-import "./ModalService.scss";
+import "./style/ModalService.scss";
 import mental_health from "../../Data/mental_heathData";
 
 function ModalMtHeatlth({ onclose }) {

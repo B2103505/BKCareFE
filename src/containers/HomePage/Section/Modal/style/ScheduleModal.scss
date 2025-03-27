@@ -1,0 +1,56 @@
+.schedule-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 75%;
+  height: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 999;
+
+  .modal-content {
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .appointment-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+
+        .form-label {
+          text-align: left;
+        }
+      }
+      .form-group_gender {
+        display: flex;
+        padding-top: 2.2rem;
+        gap: 1rem;
+
+        .gender-options {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+      .form-button {
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+      }
+    }
+  }
+}
