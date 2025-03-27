@@ -1,7 +1,7 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
-import "./ModalService.scss";
+import "./style/ModalService.scss";
 import surgerys from "../../Data/surgeryData";
 
 function Modal_surgery({ onclose }) {

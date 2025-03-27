@@ -1,7 +1,7 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
-import "./ModalService.scss";
+import "./style/ModalService.scss";
 import rm_services from "../../Data/rm_serviceData";
 
 function ModalRmService({ onclose }) {

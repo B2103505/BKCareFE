@@ -2,7 +2,7 @@ import React from "react";
 import specialties from "../../Data/specialtyData";
 import { FormattedMessage } from "react-intl";
 
-import "./ModalService.scss";
+import "./style/ModalService.scss";
 
 function ModalService({ onclose }) {
   if (!specialties || specialties.length === 0) return null;
