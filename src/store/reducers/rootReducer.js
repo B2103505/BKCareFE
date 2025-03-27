@@ -12,6 +12,7 @@ import { persistReducer } from 'redux-persist';
 const persistCommonConfig = {
     storage: storage,
     stateReconciler: autoMergeLevel2,
+
 };
 
 // const adminPersistConfig = {
@@ -23,7 +24,7 @@ const persistCommonConfig = {
 const userPersistConfig = {
     ...persistCommonConfig,
     key: 'user',
-    whitelist: ['isLoggedIn', 'userInfo']
+    whitelist: ['isLoggedIn', 'userInfo', 'language']
 };
 
 export default (history) => combineReducers({

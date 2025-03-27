@@ -46,8 +46,7 @@
       "system-administrator": {
         "header": "System Administrator",
         "user-manage": "User manage",
-        "product-manage": "Package manage",
-        "register-package-group-or-account": "Register service package for group/account"
+        "user-redux": "Manage user w redux"
       },
       "system-parameter": {
         "header": "System-parameter"
@@ -132,7 +131,6 @@
       "sure-delete-assign": "Are you sure to unassign service package to customer?"
     }
   },
-
   "service": {
     "title": "Comprehensive service",
     "specialist": "Specialist Consultation",
@@ -146,7 +144,6 @@
     "healthtest": "Health Test",
     "nearby": "Healthcare Near You"
   },
-
   "specialty": {
     "name": "Specialty",
     "musculoskeletal": "Musculoskeletal",
@@ -170,7 +167,6 @@
     "ophthalmology": "Ophthalmology",
     "nephrology_urology": "Nephrology - Urology"
   },
-
   "hospital": {
     "name": "Medical Facility",
     "vietduc": "Viet Duc Friendship Hospital",
@@ -180,7 +176,6 @@
     "anviet": "An Viet General Hospital",
     "anphuoc": "An Phuoc Internal Medicine Clinic"
   },
-
   "sidemenu": {
     "home": "Home",
     "handbook": "Handbook",
@@ -189,7 +184,6 @@
     "clinic_digital": "Clinic Digital Transformation",
     "recruitment": "Recruitment"
   },
-
   "rm_service": {
     "title1": "Remote Psychological Consultation & Therapy",
     "title2": "Remote Mental Health Services",
@@ -200,14 +194,12 @@
     "title7": "Remote ENT (Ear, Nose, Throat) Consultation",
     "title8": "Remote Neurology Consultation"
   },
-
   "mental_health": {
     "title1": "Mental health",
     "title2": "Remote psychological counseling and therapy",
     "title3": "Remote mental health",
     "title4": "Psychological counseling and therapy"
   },
-
   "surgery_name": {
     "title1": "Andrology Surgery",
     "title2": "Kidney - Urology Surgery",
@@ -217,7 +209,6 @@
     "title6": "Varicose Vein Procedure",
     "title7": "Thyroid Surgery"
   },
-
   "healthtest": {
     "title1": "Beck Depression Inventory Test",
     "title2": "RADS Depression Test for Adolescents (10 - 20 years old)",
@@ -232,7 +223,6 @@
     "title11": "ADHD Vanderbilt Attention Deficit Scale (Parent Version)",
     "title12": "Test: Dental Implant Suitability Assessment"
   },
-
   "doctor": {
     "main_title": "Featured Doctors",
     "chuyen": "Specialty",
