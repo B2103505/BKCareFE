@@ -8,6 +8,9 @@ import { getAllCodeService } from '../../services/UserService'
 export const fetchGenderStart = () => {
     return async (dispatch, getState) => {
         try {
+            dispatch({
+                type: actionTypes.FETCH_GENDER_START
+            })
             let res = await getAllCodeService('Gender');
             if (res && res.errCode === 0) {
                 dispatch(fetchGenderSuccess(res.data))
@@ -16,7 +19,7 @@ export const fetchGenderStart = () => {
             }
         } catch (e) {
             dispatch(fetchGenderFailed())
-            console.log('fetchGenderStart failed');
+            console.log('fetchGenderStart failed', e);
         }
     }
 
@@ -29,5 +32,55 @@ export const fetchGenderSuccess = (genderData) => ({
 
 export const fetchGenderFailed = () => ({
     type: actionTypes.FETCH_GENDER_FAILED
+})
+
+export const fetchPositionStart = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllCodeService('Position');
+            if (res && res.errCode === 0) {
+                dispatch(fetchPositionSuccess(res.data))
+            } else {
+                dispatch(fetchPositionFailed())
+            }
+        } catch (e) {
+            dispatch(fetchPositionFailed())
+            console.log('fetchPositionStart failed', e);
+        }
+    }
+}
+
+export const fetchPositionSuccess = (positionData) => ({
+    type: actionTypes.FETCH_POSITION_SUCCESS,
+    dataP: positionData
+})
+
+export const fetchPositionFailed = () => ({
+    type: actionTypes.FETCH_POSITION_FAILED
+})
+
+export const fetchRoleStart = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllCodeService('Role');
+            if (res && res.errCode === 0) {
+                dispatch(fetchRoleSuccess(res.data))
+            } else {
+                dispatch(fetchRoleFailed())
+            }
+        } catch (e) {
+            dispatch(fetchRoleFailed())
+            console.log('fetchRoleStart failed', e);
+        }
+    }
+}
+
+export const fetchRoleSuccess = (roleData) => ({
+    type: actionTypes.FETCH_ROLE_SUCCESS,
+    dataR: roleData
+})
+
+export const fetchRoleFailed = () => ({
+    type: actionTypes.FETCH_ROLE_FAILED
 })
 
