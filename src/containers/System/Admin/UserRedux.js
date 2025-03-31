@@ -56,7 +56,7 @@ class UserRedux extends Component {
             let arrGender = this.props.genderRedux;
             this.setState({
                 genderArr: arrGender,
-                gender: arrGender && arrGender.length > 0 ? arrGender[0].key : '' //default value
+                gender: arrGender && arrGender.length > 0 ? arrGender[0].keyMap : '' //default value
             })
         }
 
@@ -64,7 +64,7 @@ class UserRedux extends Component {
             let arrRole = this.props.RoleRedux;
             this.setState({
                 roleArr: arrRole,
-                role: arrRole && arrRole.length > 0 ? arrRole[0].key : ''
+                role: arrRole && arrRole.length > 0 ? arrRole[0].keyMap : ''
             })
         }
 
@@ -72,7 +72,7 @@ class UserRedux extends Component {
             let arrPosition = this.props.PositionRedux
             this.setState({
                 positionArr: arrPosition,
-                position: arrPosition && arrPosition.length > 0 ? arrPosition[0].key : ''
+                position: arrPosition && arrPosition.length > 0 ? arrPosition[0].keyMap : ''
             })
         }
 
@@ -87,9 +87,9 @@ class UserRedux extends Component {
                 lastName: '',
                 phoneNumber: '',
                 address: '',
-                gender: arrGender && arrGender.length > 0 ? arrGender[0].key : '',
-                role: arrRole && arrRole.length > 0 ? arrRole[0].key : '',
-                position: arrPosition && arrPosition.length > 0 ? arrPosition[0].key : '',
+                gender: arrGender && arrGender.length > 0 ? arrGender[0].keyMap : '',
+                role: arrRole && arrRole.length > 0 ? arrRole[0].keyMap : '',
+                position: arrPosition && arrPosition.length > 0 ? arrPosition[0].keyMap : '',
                 avt: '',
                 previewImgUrl: '',
                 action: CRUD_ACTION.CREATE,
@@ -184,20 +184,7 @@ class UserRedux extends Component {
         copyState[id] = event.target.value;
         this.setState({
             ...copyState
-        }, () => {
-            // console.log('check onchange', this.state)
         })
-
-        // email: '',
-        // password: '',
-        // firstName: '',
-        // lastName: '',
-        // phoneNumber: '',
-        // address: '',
-        // gender: '',
-        // position: '',
-        // role: '',
-        // avt: ''
     }
 
     handleEditUser = (user) => {
@@ -295,7 +282,7 @@ class UserRedux extends Component {
                                     {genders && genders.length > 0 && genders.map((item, index) => {
                                         return (
                                             <option key={index}
-                                                value={item.key}
+                                                value={item.keyMap}
                                             >{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
                                         )
                                     })}
@@ -310,7 +297,7 @@ class UserRedux extends Component {
                                     {positions && positions.length > 0 && positions.map((item, index) => {
                                         return (
                                             <option key={index}
-                                                value={item.key}
+                                                value={item.keyMap}
                                             >{language === LANGUAGES.VI ? item.valueVi : item.valueEn}</option>
                                         )
                                     })}
@@ -326,7 +313,7 @@ class UserRedux extends Component {
                                         && roles.map((item, index) => {
                                             return (
                                                 <option key={index}
-                                                    value={item.key}
+                                                    value={item.keyMap}
                                                 >{language === LANGUAGES.VI
                                                     ? item.valueVi : item.valueEn}</option>
                                             )

@@ -1,4 +1,5 @@
 import axios from "../axios";
+import { EditUserSuccess } from "../store/actions";
 
 const handleLoginApi = (userEmail, userPassword) => {
     return axios.post('/api/login', { email: userEmail, password: userPassword });
@@ -32,8 +33,13 @@ const getAllCodeService = (inputType) => {
     return axios.get(`/api/allcode?type=${inputType}`)
 }
 
+const getTopDoctorHomeService = (limit) => {
+    return axios.get(`/api/top-doctor-home?limit=${limit}`)
+}
+
 export {
     handleLoginApi, GetAllUsers,
     CreateNewUserService, DeleteUserService,
-    EditUserService, getAllCodeService
+    EditUserService, getAllCodeService,
+    getTopDoctorHomeService
 }
