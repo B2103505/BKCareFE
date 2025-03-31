@@ -42,7 +42,8 @@
     "position": "position",
     "roleId": "Role",
     "Image": "Image",
-    "save": "Save user"
+    "save": "Save user",
+    "edit": "edit user"
   },
   "service": {
     "title": "Comprehensive service",

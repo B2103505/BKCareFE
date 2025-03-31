@@ -42,7 +42,8 @@
     "position": "Chức danh",
     "roleId": "Vai trò",
     "Image": "Hình ảnh đại diện",
-    "save": "Lưu user"
+    "save": "Lưu user",
+    "edit": "Lưu thay đổi"
   },
   "service": {
     "title": "Dịch vụ toàn diện",
