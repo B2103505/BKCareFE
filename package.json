@@ -9,6 +9,7 @@
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
+    "buffer": "^6.0.3",
     "connected-react-router": "^6.9.1",
     "date-fns": "^2.29.3",
     "lodash": "^4.17.21",
