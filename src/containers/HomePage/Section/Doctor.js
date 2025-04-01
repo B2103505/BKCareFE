@@ -48,19 +48,19 @@ class Doctor extends Component {
 
                     switch (item.positionId) {
                       case "P0": // Đảm bảo item.positionId trả về chuỗi
-                        position = "Bác sĩ";
+                        position = "doctor.P0";
                         break;
                       case "P1":
-                        position = "Thạc sĩ";
+                        position = "doctor.P1";
                         break;
                       case "P2":
-                        position = "Tiến sĩ";
+                        position = "doctor.P2";
                         break;
                       case "P3":
-                        position = "Phó Giáo sư";
+                        position = "doctor.P3";
                         break;
                       case "P4":
-                        position = "Giáo sư";
+                        position = "doctor.P4";
                         break;
                       default:
                         position = "Không xác định"; // Giá trị mặc định nếu không khớp
@@ -68,8 +68,8 @@ class Doctor extends Component {
 
                     console.log("Chức vụ:", position);
 
-                    let nameVi = `${position} ${item.lastName} ${item.firstName}`;
-                    let nameEn = `${position} ${item.firstName} ${item.lastName}`;
+                    let nameVi = `${item.lastName} ${item.firstName}`;
+                    let nameEn = `${item.firstName} ${item.lastName}`;
 
                     // Chuyển buffer thành Base64 để hiển thị hình ảnh
                     const bufferData = item.image.data;
@@ -80,7 +80,9 @@ class Doctor extends Component {
                       <>
                         <div className="doctor-avatar" key={index}>
                           <img src={imageSrc} alt="Doctor Avatar" />
-                          <h3>{language === LANGUAGES.VI ? nameVi : nameEn} </h3>
+                          <h3>
+                            <FormattedMessage id={position} /> {language === LANGUAGES.VI ? nameVi : nameEn}{" "}
+                          </h3>
                         </div>
                       </>
                     );
