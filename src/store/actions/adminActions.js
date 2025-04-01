@@ -203,7 +203,7 @@ export const EditUserFailed = () => ({
 export const fetchTopDoctor = () => {
     return async (dispatch, getState) => {
         try {
-            let res = await getTopDoctorHomeService(3);
+            let res = await getTopDoctorHomeService(8);
             console.log('check res ', res)
             if (res && res.errCode === 0) {
                 dispatch({
