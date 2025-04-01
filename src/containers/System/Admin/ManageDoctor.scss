@@ -1,0 +1,63 @@
+#TableManageUser {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#TableManageUser td,
+#TableManageUser th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#TableManageUser tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#TableManageUser tr:hover {
+    background-color: #ddd;
+}
+
+#TableManageUser th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+.manage-doctor-container {
+    padding: 5px;
+
+    .manage-doctor-title {}
+
+    .save-content-doctor {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-left: 10px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        padding: 5px;
+        background: rgb(166, 234, 135);
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .more-info {
+        display: flex;
+        gap: 20px;
+        padding-bottom: 10px;
+
+        .content-left {
+            width: 40%;
+        }
+
+        .content-right {
+            width: 60%;
+        }
+    }
+}
