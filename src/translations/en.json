@@ -138,13 +138,11 @@
     "title12": "Test: Dental Implant Suitability Assessment"
   },
   "doctor": {
-    "main_title": "Featured Doctors",
-    "chuyen": "Specialty",
-    "name1": "Vo Dang",
-    "name2": "Pham Vu Lam",
-    "title1": "Professor",
-    "title2": "Doctor",
-    "major1": "General Medicine",
-    "major2": "Internal Medicine"
+    "main_title": "Doctor List",
+    "P0": "Doctor",
+    "P1": "Master",
+    "P2": "Doctor of Philosophy",
+    "P3": "Associate Professor",
+    "P4": "Professor"
   }
 }

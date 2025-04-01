@@ -1,23 +1,22 @@
 import React, { Component } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
-import { connect } from 'react-redux';
+import { FormattedMessage } from "react-intl";
+import { connect } from "react-redux";
 import "./Doctor.scss";
-import doctors from "../Data/doctorData";
-import * as actions from '../../../store/actions';
-import { LANGUAGES } from '../../../utils/'
+import * as actions from "../../../store/actions";
+import { LANGUAGES } from "../../../utils/";
 class Doctor extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      arrDoctors: []
-    }
+      arrDoctors: [],
+    };
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.topDoctorsRedux !== this.props.topDoctorsRedux) {
       this.setState({
-        arrDoctors: this.props.topDoctorsRedux
-      })
+        arrDoctors: this.props.topDoctorsRedux,
+      });
     }
   }
 
@@ -26,57 +25,88 @@ class Doctor extends Component {
   }
 
   render() {
-    console.log('check topDoctorsRedux', this.props.topDoctorsRedux)
+    // console.log("check topDoctorsRedux", this.props.topDoctorsRedux);
     let allDoctors = this.state.arrDoctors;
     let { language } = this.props;
+
     return (
-      <div className='section-share '>
-        <div className='section-container'></div>
-        <div className='section-body'>
-          <div className="doctor_cont">
-            {this.state.arrDoctors && this.state.arrDoctors.length > 0 &&
-              this.state.arrDoctors.map((item, index) => {
-                let nameVi = `${item.positionId}, ${item.firstName}, ${item.lastName}`
-                let nameEn = `${item.positionId}, ${item.firstName}, ${item.lastName}`
-                return (
-                  <>
-                    <div className="background_doctor" style={{ backgroundImage: "url('/background/1.webp')" }}>
-                      <div className="services-overview">
-                        <h1>
-                          <FormattedMessage id="doctor.main_title" />
-                        </h1>
-                        <div className='doctor-box'>
-                          <div>{language === LANGUAGES.VI ? nameVi : nameEn} </div>
-                          <div className="doctor_cont">ABC
-                          </div>
+      <div className="section-share ">
+        <div className="section-container"></div>
+        <div className="section-body">
+          <div className="doctor-list">
+            <div className="background_doctor" style={{ backgroundImage: "url('/background/1.webp')" }}>
+              <h1 className="background_imgdoctor">
+                <FormattedMessage id="doctor.main_title" />
+              </h1>
+              <div className="doctor-overview">
+                {allDoctors &&
+                  allDoctors.length > 0 &&
+                  allDoctors.map((item, index) => {
+                    console.log(item);
+
+                    let position = ""; // Khai báo trước để sử dụng ngoài switch
+
+                    switch (item.positionId) {
+                      case "P0": // Đảm bảo item.positionId trả về chuỗi
+                        position = "Bác sĩ";
+                        break;
+                      case "P1":
+                        position = "Thạc sĩ";
+                        break;
+                      case "P2":
+                        position = "Tiến sĩ";
+                        break;
+                      case "P3":
+                        position = "Phó Giáo sư";
+                        break;
+                      case "P4":
+                        position = "Giáo sư";
+                        break;
+                      default:
+                        position = "Không xác định"; // Giá trị mặc định nếu không khớp
+                    }
+
+                    console.log("Chức vụ:", position);
+
+                    let nameVi = `${position} ${item.lastName} ${item.firstName}`;
+                    let nameEn = `${position} ${item.firstName} ${item.lastName}`;
+
+                    // Chuyển buffer thành Base64 để hiển thị hình ảnh
+                    const bufferData = item.image.data;
+                    const base64String = Buffer.from(bufferData).toString("utf-8");
+                    const imageSrc = base64String; // Đây là chuỗi base64 của hình ảnh
+
+                    return (
+                      <>
+                        <div className="doctor-avatar" key={index}>
+                          <img src={imageSrc} alt="Doctor Avatar" />
+                          <h3>{language === LANGUAGES.VI ? nameVi : nameEn} </h3>
                         </div>
-                      </div>
-                    </div>
-                  </>
-                );
-              })}
+                      </>
+                    );
+                  })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-    )
+    );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     language: state.app.language,
     isLoggedIn: state.user.isLoggedIn,
     topDoctorsRedux: state.admin.topDoctors,
+  };
+};
 
-  }
-}
-
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    loadTopDoctor: () => dispatch(actions.fetchTopDoctor())
-  }
-}
+    loadTopDoctor: () => dispatch(actions.fetchTopDoctor()),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Doctor);
 
@@ -114,6 +144,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(Doctor);
 // }
 
 // export default Doctor;
-
-
-
