@@ -2,8 +2,9 @@ import React, { useRef, useState, useEffect } from "react";
 import ArrowButton from "./ArrowButton";
 
 import "./DragScroll.scss";
+import { useLayoutEffect } from "react";
 
-function DragScroll({ children }) {
+function DragScroll({ children, showArrows = true }) {
   const containerRef = useRef(null); // Tham chiếu đến container
   const [isDragging, setIsDragging] = useState(false); // Theo dõi trạng thái kéo
   const [startX, setStartX] = useState(0); // Vị trí chuột ban đầu
@@ -59,6 +60,8 @@ function DragScroll({ children }) {
   const handleMouseUp = () => setIsDragging(false);
   const handleMouseLeave = () => setIsDragging(false);
 
+  console.log(itemWidth);
+
   // Xử lý khi nhấn nút mũi tên trái
   const handleScrollLeft = () => {
     containerRef.current.scrollBy({
@@ -88,8 +91,8 @@ function DragScroll({ children }) {
       >
         {children} {/* Nội dung sẽ được render bên trong */}
         {/* Nút cuộn trái/phải */}
-        {canScrollLeft && <ArrowButton direction="left" onClick={handleScrollLeft} />}
-        {canScrollRight && <ArrowButton direction="right" onClick={handleScrollRight} />}
+        {showArrows && canScrollLeft && <ArrowButton direction="left" onClick={handleScrollLeft} />}
+        {showArrows && canScrollRight && <ArrowButton direction="right" onClick={handleScrollRight} />}
       </div>
     </div>
   );

@@ -5,27 +5,34 @@
 
   .background_doctor {
     height: 45vh;
+    padding-left: 7rem;
+    padding-right: 7rem;
 
     .background_imgdoctor {
       padding-top: 1rem;
-      padding-left: 11rem;
+      padding-left: 6rem;
     }
 
     .doctor-overview {
       display: flex;
-      padding-left: 8rem;
       padding-top: 3rem;
 
       .doctor-avatar {
+        flex: 1;
+        flex: 0 0 calc(20% - 20px); /* Đảm bảo chỉ 3 mục hiển thị đầy đủ trong khung */
+        scroll-snap-align: center; /* Căn giữa khi cuộn */
+
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 20%;
+        // width: 20%;
 
         img {
           width: 40%;
+          height: 40%;
           border: 1px solid black;
           border-radius: 50%;
+          object-fit: cover; /* Giữ tỷ lệ ảnh và cắt bớt phần dư */
         }
         h3 {
           font-size: 1.3rem;
