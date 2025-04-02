@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import "./Doctor.scss";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils/";
-import { withRouter } from 'react-router';
+import { withRouter } from "react-router";
+import DragScroll from "./Function/DragScroll";
 
 class Doctor extends Component {
   constructor(props) {
@@ -27,9 +28,9 @@ class Doctor extends Component {
   }
 
   handleViewDetailDoctor = (doctor) => {
-    console.log('check doctor', doctor);
-    this.props.history.push(`/detail-doctor/${doctor.id}`)
-  }
+    console.log("check doctor", doctor);
+    this.props.history.push(`/detail-doctor/${doctor.id}`);
+  };
 
   render() {
     // console.log("check topDoctorsRedux", this.props.topDoctorsRedux);
@@ -45,58 +46,61 @@ class Doctor extends Component {
               <h1 className="background_imgdoctor">
                 <FormattedMessage id="doctor.main_title" />
               </h1>
-              <div className="doctor-overview">
-                {allDoctors &&
-                  allDoctors.length > 0 &&
-                  allDoctors.map((item, index) => {
-                    // console.log(item);
-                    let position = ""; // Khai báo trước để sử dụng ngoài switch
+              <DragScroll showArrows={false}>
+                <div className="doctor-overview">
+                  {allDoctors &&
+                    allDoctors.length > 0 &&
+                    allDoctors.map((item, index) => {
+                      // console.log(item);
+                      let position = ""; // Khai báo trước để sử dụng ngoài switch
 
-                    switch (item.positionId) {
-                      case "P0": // Đảm bảo item.positionId trả về chuỗi
-                        position = "doctor.P0";
-                        break;
-                      case "P1":
-                        position = "doctor.P1";
-                        break;
-                      case "P2":
-                        position = "doctor.P2";
-                        break;
-                      case "P3":
-                        position = "doctor.P3";
-                        break;
-                      case "P4":
-                        position = "doctor.P4";
-                        break;
-                      default:
-                        position = "Không xác định"; // Giá trị mặc định nếu không khớp
-                    }
+                      switch (item.positionId) {
+                        case "P0": // Đảm bảo item.positionId trả về chuỗi
+                          position = "doctor.P0";
+                          break;
+                        case "P1":
+                          position = "doctor.P1";
+                          break;
+                        case "P2":
+                          position = "doctor.P2";
+                          break;
+                        case "P3":
+                          position = "doctor.P3";
+                          break;
+                        case "P4":
+                          position = "doctor.P4";
+                          break;
+                        default:
+                          position = "Không xác định"; // Giá trị mặc định nếu không khớp
+                      }
 
-                    // console.log("Chức vụ:", position);
+                      // console.log("Chức vụ:", position);
 
-                    let nameVi = `${item.lastName} ${item.firstName}`;
-                    let nameEn = `${item.firstName} ${item.lastName}`;
+                      let nameVi = `${item.lastName} ${item.firstName}`;
+                      let nameEn = `${item.firstName} ${item.lastName}`;
 
-                    // Chuyển buffer thành Base64 để hiển thị hình ảnh
-                    const bufferData = item.image.data;
-                    const base64String = Buffer.from(bufferData).toString("utf-8");
-                    const imageSrc = base64String; // Đây là chuỗi base64 của hình ảnh
+                      // Chuyển buffer thành Base64 để hiển thị hình ảnh
+                      const bufferData = item.image.data;
+                      const base64String = Buffer.from(bufferData).toString("utf-8");
+                      const imageSrc = base64String; // Đây là chuỗi base64 của hình ảnh
 
-                    return (
-                      <>
-                        <div className="doctor-avatar"
-                          key={index}
-                          onClick={() => this.handleViewDetailDoctor(item)}
-                        >
-                          <img src={imageSrc} alt="Doctor Avatar" />
-                          <h3>
-                            <FormattedMessage id={position} /> {language === LANGUAGES.VI ? nameVi : nameEn}{" "}
-                          </h3>
-                        </div>
-                      </>
-                    );
-                  })}
-              </div>
+                      return (
+                        <>
+                          <div
+                            className="doctor-avatar"
+                            key={index}
+                            onClick={() => this.handleViewDetailDoctor(item)}
+                          >
+                            <img src={imageSrc} alt="Doctor Avatar" />
+                            <h3>
+                              <FormattedMessage id={position} /> {language === LANGUAGES.VI ? nameVi : nameEn}{" "}
+                            </h3>
+                          </div>
+                        </>
+                      );
+                    })}
+                </div>
+              </DragScroll>
             </div>
           </div>
         </div>
