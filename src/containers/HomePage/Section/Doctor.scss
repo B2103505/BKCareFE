@@ -20,8 +20,10 @@
 
       .doctor-avatar {
         flex: 1;
-        flex: 0 0 calc(25% - 20px); /* Đảm bảo chỉ 3 mục hiển thị đầy đủ trong khung */
-        scroll-snap-align: center; /* Căn giữa khi cuộn */
+        flex: 0 0 calc(25% - 20px);
+        /* Đảm bảo chỉ 3 mục hiển thị đầy đủ trong khung */
+        scroll-snap-align: center;
+        /* Căn giữa khi cuộn */
 
         display: flex;
         flex-direction: column;
@@ -30,8 +32,8 @@
         cursor: pointer;
 
         img {
-          width: 40%;
-          height: 40%;
+          width: 120px;
+          height: 120px;
           object-fit: cover;
           border: 1px solid black;
           border-radius: 50%;

@@ -6,7 +6,7 @@ import { FormattedMessage } from "react-intl";
 import { injectIntl } from "react-intl";
 import { LANGUAGES } from "../../utils";
 import { changelanguageApp } from "../../store/actions";
-
+import { withRouter } from 'react-router';
 import SideMenu from "./Section/SideMenu/SideMenu";
 
 class HomeHeader extends Component {
@@ -28,6 +28,12 @@ class HomeHeader extends Component {
     this.props.changelanguageAppRedux(language);
   };
 
+  returntoHome = () => {
+    if (this.props.history) {
+      this.props.history.push(`/home`);
+    }
+  }
+
   render() {
     const { intl } = this.props;
     let language = this.props.language;
@@ -39,9 +45,10 @@ class HomeHeader extends Component {
             <div className="home-header__left">
               <i className="fas fa-bars" onClick={this.toggleMenu}></i>
               <div className="home-header__logo">
-                <a href="#">
-                  <img src={logo} alt="Logo" />
-                </a>
+                <div className="header-logo">
+                  <img src={logo} alt="Logo" 
+                  onClick={() => this.returntoHome()}/>
+                </div>
               </div>
             </div>
 
@@ -124,35 +131,35 @@ class HomeHeader extends Component {
             </div>
           </div>
         </div>
-        {this.props.isShowBanner === true && 
-        <div className="home-banner">
-          <div className="home-banner__intro">
-            <h2>
-              {" "}
-              <FormattedMessage id="banner.title1"></FormattedMessage>
-            </h2>
-            <h2>
-              <FormattedMessage id="banner.title2"></FormattedMessage>
-            </h2>
+        {this.props.isShowBanner === true &&
+          <div className="home-banner">
+            <div className="home-banner__intro">
+              <h2>
+                {" "}
+                <FormattedMessage id="banner.title1"></FormattedMessage>
+              </h2>
+              <h2>
+                <FormattedMessage id="banner.title2"></FormattedMessage>
+              </h2>
 
-            <div className="home-banner__search-container">
-              <div className="home-banner__search-box">
-                <input
-                  type="text"
-                  className="home-header__search-input"
-                  placeholder={intl.formatMessage({ id: "banner.search" })}
-                ></input>
-                <i className="fas fa-paper-plane"></i>
-              </div>
+              <div className="home-banner__search-container">
+                <div className="home-banner__search-box">
+                  <input
+                    type="text"
+                    className="home-header__search-input"
+                    placeholder={intl.formatMessage({ id: "banner.search" })}
+                  ></input>
+                  <i className="fas fa-paper-plane"></i>
+                </div>
 
-              <div className="home-banner__recommend">
-                <i className="fas fa-hospital"></i>
-                <FormattedMessage id="banner.findHospital"></FormattedMessage>
+                <div className="home-banner__recommend">
+                  <i className="fas fa-hospital"></i>
+                  <FormattedMessage id="banner.findHospital"></FormattedMessage>
+                </div>
               </div>
             </div>
+            <div className="home-banner__gradient"></div>
           </div>
-          <div className="home-banner__gradient"></div>
-        </div>
         }
         <SideMenu isOpen={this.state.isMenuOpen} onClose={() => this.setState({ isMenuOpen: false })} />
       </React.Fragment>
@@ -174,4 +181,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 // export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
-export default injectIntl(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));
+export default withRouter(injectIntl(connect(mapStateToProps, mapDispatchToProps)(HomeHeader)));
