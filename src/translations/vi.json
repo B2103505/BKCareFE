@@ -148,5 +148,11 @@
     "P2": "Tiến sĩ",
     "P3": "Phó giáo sư",
     "P4": "Giáo sư"
+  },
+  "manage-schedule": {
+    "title": "Quản lý kế hoạch khám bệnh của bác sĩ",
+    "choose-doctor": "Chọn bác sĩ",
+    "choose-date": "Chọn ngày",
+    "btnSave": "Lưu lịch khám"
   }
 }

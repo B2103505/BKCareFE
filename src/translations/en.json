@@ -148,5 +148,11 @@
     "P2": "Doctor of Philosophy",
     "P3": "Associate Professor",
     "P4": "Professor"
+  },
+  "manage-schedule": {
+    "title": "Manage doctor's schedule",
+    "choose-doctor": "Choose Doctor",
+    "choose-date": "Choose Date",
+    "btnSave": "Save Schedule"
   }
 }
