@@ -124,7 +124,7 @@ class HomeHeader extends Component {
             </div>
           </div>
         </div>
-
+        {this.props.isShowBanner === true && 
         <div className="home-banner">
           <div className="home-banner__intro">
             <h2>
@@ -153,7 +153,7 @@ class HomeHeader extends Component {
           </div>
           <div className="home-banner__gradient"></div>
         </div>
-
+        }
         <SideMenu isOpen={this.state.isMenuOpen} onClose={() => this.setState({ isMenuOpen: false })} />
       </React.Fragment>
     );

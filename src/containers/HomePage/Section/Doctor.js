@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import "./Doctor.scss";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils/";
+import { withRouter } from 'react-router';
+
 class Doctor extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,11 @@ class Doctor extends Component {
     this.props.loadTopDoctor();
   }
 
+  handleViewDetailDoctor = (doctor) => {
+    console.log('check doctor', doctor);
+    this.props.history.push(`/detail-doctor/${doctor.id}`)
+  }
+
   render() {
     // console.log("check topDoctorsRedux", this.props.topDoctorsRedux);
     let allDoctors = this.state.arrDoctors;
@@ -42,8 +49,7 @@ class Doctor extends Component {
                 {allDoctors &&
                   allDoctors.length > 0 &&
                   allDoctors.map((item, index) => {
-                    console.log(item);
-
+                    // console.log(item);
                     let position = ""; // Khai báo trước để sử dụng ngoài switch
 
                     switch (item.positionId) {
@@ -66,7 +72,7 @@ class Doctor extends Component {
                         position = "Không xác định"; // Giá trị mặc định nếu không khớp
                     }
 
-                    console.log("Chức vụ:", position);
+                    // console.log("Chức vụ:", position);
 
                     let nameVi = `${item.lastName} ${item.firstName}`;
                     let nameEn = `${item.firstName} ${item.lastName}`;
@@ -78,7 +84,10 @@ class Doctor extends Component {
 
                     return (
                       <>
-                        <div className="doctor-avatar" key={index}>
+                        <div className="doctor-avatar"
+                          key={index}
+                          onClick={() => this.handleViewDetailDoctor(item)}
+                        >
                           <img src={imageSrc} alt="Doctor Avatar" />
                           <h3>
                             <FormattedMessage id={position} /> {language === LANGUAGES.VI ? nameVi : nameEn}{" "}
@@ -110,39 +119,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Doctor);
-
-// function Doctor() {
-//   const intl = useIntl(); // Hook để lấy text từ react-intl
-
-//   return (
-//     <>
-//       <div className="background_doctor" style={{ backgroundImage: "url('/background/1.webp')" }}>
-//         <div className="services-overview">
-//           <h1>
-//             <FormattedMessage id="doctor.main_title" />
-//           </h1>
-
-//           <div className="doctor_cont">
-//             {doctors.map((dt, index) => (
-//               <div className="dc_info">
-//                 <img src={dt.img} alt={intl.formatMessage({ id: dt.name })} />
-//                 <span>
-//                   <FormattedMessage id={dt.name} />
-//                 </span>
-//                 <span>
-//                   <FormattedMessage id={dt.title} />
-//                 </span>
-//                 <span>
-//                   <FormattedMessage id="doctor.chuyen" />: <FormattedMessage id={dt.major} />
-//                 </span>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default Doctor;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Doctor));
