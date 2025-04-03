@@ -13,6 +13,7 @@ class DoctorSchedule extends Component {
         super(props);
         this.state = {
             allDays: [],
+            allAvailableTime: [],
         }
     }
 
@@ -52,12 +53,18 @@ class DoctorSchedule extends Component {
             let doctorId = this.props.doctorIdFromParent;
             let date = event.target.value;
             let res = await getScheduleDoctorByDate(doctorId, date);
-            console.log('check res', res);
+            if (res && res.errCode === 0) {
+                this.setState({
+                    allAvailableTime: res.data ? res.data : []
+                })
+            }
+            console.log('check res schedule from react', res);
         }
     }
 
     render() {
-        let { allDays } = this.state;
+        let { allDays, allAvailableTime } = this.state;
+        let { language } = this.props
         return (
             <div className='doctor-schedule'>
                 <div className='all-schedule'>
@@ -76,7 +83,24 @@ class DoctorSchedule extends Component {
                 </div>
 
                 <div className='all-available-time'>
+                    <div className='text-calendar'>
+                        <i className="far fa-calendar-alt"><span> Lịch khám </span></i>
+                    </div>
 
+                    <div className='time-content'>
+                        {allAvailableTime && allAvailableTime.length > 0 ?
+                            allAvailableTime.map((item, index) => {
+                                let timeDisplay = language === LANGUAGES.VI ?
+                                    item.timeTypeData.valueVi : item.timeTypeData.valueEn;
+                                return (
+                                    <button key={index}>{timeDisplay}</button>
+                                )
+                            })
+                            : <div className='no-schedule'>
+                                Không có lịch hẹn trong thời gian này, vui lòng chọn thời gian khác !!!
+                            </div>
+                        }
+                    </div>
                 </div>
             </div>
         );
