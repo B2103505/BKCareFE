@@ -101,19 +101,19 @@ class ManageSchedule extends Component {
     handleSaveSchedule = async () => {
         let { rangeTime, selectedDoctor, currentDate } = this.state;
         let result = [];
-        if (!currentDate ){
+        if (!currentDate) {
             toast.error('Invalid date');
             return;
         }
-        if (selectedDoctor && _.isEmpty(selectedDoctor)){
+        if (selectedDoctor && _.isEmpty(selectedDoctor)) {
             toast.error('Invalid selected doctor')
             return;
         }
         // let formattedDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
         let formattedDate = new Date(currentDate).getTime();
-        if (rangeTime && rangeTime.length > 0){
+        if (rangeTime && rangeTime.length > 0) {
             let selectedTime = rangeTime.filter(item => item.isSelected === true)
-            if (selectedTime && selectedTime.length > 0){
+            if (selectedTime && selectedTime.length > 0) {
                 selectedTime.map(time => {
                     let obj = {};
                     obj.doctorId = selectedDoctor.value;
@@ -133,7 +133,7 @@ class ManageSchedule extends Component {
             date: formattedDate
 
         });
-
+        toast.success('Save succeed');
 
         console.log('check result', result);
         console.log('check res saveBulk', res);
