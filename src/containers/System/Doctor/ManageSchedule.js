@@ -9,6 +9,7 @@ import DatePicker from '../../../components/Input/DatePicker'
 import moment from 'moment';
 import { toast } from 'react-toastify';
 import _ from 'lodash';
+import { saveBulkSchedule } from '../../../services/UserService'
 
 class ManageSchedule extends Component {
     constructor(props) {
@@ -97,7 +98,7 @@ class ManageSchedule extends Component {
         }
     }
 
-    handleSaveSchedule = () => {
+    handleSaveSchedule = async () => {
         let { rangeTime, selectedDoctor, currentDate } = this.state;
         let result = [];
         if (!currentDate ){
@@ -108,7 +109,8 @@ class ManageSchedule extends Component {
             toast.error('Invalid selected doctor')
             return;
         }
-        let formattedDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
+        // let formattedDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
+        let formattedDate = new Date(currentDate).getTime();
         if (rangeTime && rangeTime.length > 0){
             let selectedTime = rangeTime.filter(item => item.isSelected === true)
             if (selectedTime && selectedTime.length > 0){
@@ -116,7 +118,7 @@ class ManageSchedule extends Component {
                     let obj = {};
                     obj.doctorId = selectedDoctor.value;
                     obj.date = formattedDate;
-                    obj.time = time.keyMap;
+                    obj.timeType = time.keyMap;
                     result.push(obj);
                 })
             } else {
@@ -125,13 +127,21 @@ class ManageSchedule extends Component {
             }
         }
 
+        let res = await saveBulkSchedule({
+            arrSchedule: result,
+            doctorId: selectedDoctor.value,
+            date: formattedDate
+
+        });
+
+
         console.log('check result', result);
+        console.log('check res saveBulk', res);
     }
 
     render() {
         let { rangeTime } = this.state;
         let { language } = this.props;
-        console.log('check range time', rangeTime);
         return (
             <div className='manage-schedule-container'>
                 <div className='m-s-title'>
