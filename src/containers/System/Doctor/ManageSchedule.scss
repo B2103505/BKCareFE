@@ -24,6 +24,15 @@
 
     .btn-schedule {
         margin-top: 10px;
+
+        &.active{
+            background-color: rgb(51, 192, 51);
+        }
+    }
+
+    .btn-save-schedule{
+        margin-top: 10px;
+
     }
 
 
