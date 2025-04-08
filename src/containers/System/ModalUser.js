@@ -16,7 +16,7 @@ class ModalUser extends Component {
             address: '',
             phoneNumber: '',
             Gender: 1,
-            roleId: 'R3'
+            roleId: ''
         }
     }
 
