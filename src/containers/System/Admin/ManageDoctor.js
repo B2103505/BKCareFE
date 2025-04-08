@@ -146,29 +146,66 @@ class ManageDoctor extends Component {
             nameClinic: this.state.nameClinic,
             addressClinic: this.state.addressClinic,
             note: this.state.note
-        }) 
+        })
         // console.log('check state', this.state)
     }
 
     //change doctor
     handleChangeSelect = async (selectedOption) => {
+        let { listPayment, listPrice, listProvince } = this.state
         let res = await getDetailInfoDoctor(selectedOption.value)
         this.setState({ selectedOption });
 
         if (res && res.errCode === 0 && res.data && res.data.Markdown) {
             let MarkDown = res.data.Markdown;
+            let addressClinic = '',
+                nameClinic = '', note = '',
+                paymentId = '', priceId = '',
+                provinceId = '', selectedPrice = '',
+                selectedPayment = '', selectedProvince = '';
+
+            // if co data
+            if (res.data.Doctor_Info) {
+                addressClinic = res.data.Doctor_Info.addressClinic;
+                nameClinic = res.data.Doctor_Info.nameClinic;
+                note = res.data.Doctor_Info.note;
+                paymentId = res.data.Doctor_Info.paymentId;
+                priceId = res.data.Doctor_Info.priceId;
+                provinceId = res.data.Doctor_Info.provinceId;
+
+                selectedPrice = listPrice.find(item => {
+                    return item && item.value === priceId
+                })
+                selectedPayment = listPayment.find(item => {
+                    return item && item.value === paymentId
+                })
+                selectedProvince = listProvince.find(item => {
+                    return item && item.value === provinceId
+                })
+            }
+
             this.setState({
                 contentHTML: MarkDown.contentHTML,
                 contentMarkdown: MarkDown.contentMarkdown,
                 description: MarkDown.description,
                 hasOldData: true,
+                addressClinic: addressClinic,
+                nameClinic: nameClinic,
+                note: note,
+                selectedPrice: selectedPrice,
+                selectedPayment: selectedPayment,
+                selectedProvince: selectedProvince
             })
         } else {
+            //khong co data => set ''
             this.setState({
                 contentHTML: '',
                 contentMarkdown: '',
                 description: '',
                 hasOldData: false,
+                addressClinic: '',
+                nameClinic: '',
+                note: '',
             })
         }
     }

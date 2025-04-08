@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from "react-redux";
-import HomeHeader
-    from '../../HomePage/HomeHeader';
+import HomeHeader from '../../HomePage/HomeHeader';
 import "./DetailDoctor.scss";
 import { getDetailInfoDoctor } from '../../../services/UserService'
 import { LANGUAGES } from '../../../utils';
 import DoctorSchedule from './DoctorSchedule';
+import DoctorExtraInfo from './DoctorExtraInfo';
 import { FormattedMessage } from 'react-intl';
 
 class DetailDoctor extends Component {
@@ -84,7 +84,8 @@ class DetailDoctor extends Component {
                         </div>
 
                         <div className='content-right'>
-
+                            <DoctorExtraInfo
+                                doctorIdFromParent={this.state.currentDoctorId} />
                         </div>
                     </div>
 
