@@ -5,6 +5,8 @@ import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
 import { getProfileDoctorById } from '../../../services/UserService'
 import NumberFormat from 'react-number-format';
+import _ from 'lodash'
+import moment from 'moment';
 
 class ProfileDoctor extends Component {
 
@@ -42,15 +44,38 @@ class ProfileDoctor extends Component {
         }
     }
 
+    renderTimeBooking = (dataScheduleModalTime) => {
+        let { language } = this.props;
+        console.log('check dataSchedule', dataScheduleModalTime);
+        if (dataScheduleModalTime && !_.isEmpty(dataScheduleModalTime)) {
+            let time = language === LANGUAGES.VI ?
+                dataScheduleModalTime.timeTypeData.valueVi
+                :
+                dataScheduleModalTime.timeTypeData.valueEn
+            let date = language === LANGUAGES.VI ?
+                moment.unix(+dataScheduleModalTime.date / 1000).format('dddd - DD/MM/YYYY')
+                :
+                moment.unix(+dataScheduleModalTime.date / 1000).locale('en').format('ddd - MM/DD/YYYY');
+            return (
+                <>
+                    <div className='time-choose'>{time} - {date}</div>
+                    <div className='free-booking'>Mien Phi Dat Lich</div>
+                </>
+            )
+        }
+        return <></>
+    }
 
     render() {
         let { dataProfile } = this.state;
-        let { language } = this.props;
+        let { language, isShowDescDoctor, dataScheduleModalTime } = this.props;
         let nameVi = '', nameEn = '';
         if (dataProfile && dataProfile.positionData) {
             nameVi = `${dataProfile.positionData.valueVi} ${dataProfile.lastName} ${dataProfile.firstName}`
             nameEn = `${dataProfile.positionData.valueEn} ${dataProfile.firstName} ${dataProfile.lastName}`
         }
+
+        console.log('check props', dataScheduleModalTime)
         return (
             <div className='profile-doctor-container'>
 
@@ -68,12 +93,20 @@ class ProfileDoctor extends Component {
                         </div>
 
                         <div className='down'>
-                            {dataProfile &&
-                                dataProfile.Markdown &&
-                                dataProfile.Markdown.description &&
-                                <span>
-                                    {dataProfile.Markdown.description}
-                                </span>
+                            {isShowDescDoctor === true ?
+                                <>
+                                    {dataProfile &&
+                                        dataProfile.Markdown &&
+                                        dataProfile.Markdown.description &&
+                                        <span>
+                                            {dataProfile.Markdown.description}
+                                        </span>
+                                    }
+                                </>
+                                :
+                                <>
+                                    {this.renderTimeBooking(dataScheduleModalTime)}
+                                </>
                             }
                         </div>
                     </div>
