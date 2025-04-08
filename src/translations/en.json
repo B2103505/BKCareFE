@@ -170,9 +170,12 @@
       "description": "description",
       "save": "Save Infor",
       "create": "Create Infor",
-      "choose-price": "Choose Price",
-      "choose-payment": "Choose Payment",
-      "choose-province": "Choose Province"
+      "choose-price": "Price",
+      "choose-payment": "Payment",
+      "choose-province": "Province",
+      "nameClinic": "Clinic's name",
+      "addressClinic": "Clinic's Address",
+      "note": "Note"
     }
   }
 }

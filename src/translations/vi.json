@@ -170,10 +170,12 @@
       "description": "Thông tin giới thiệu",
       "save": "Lưu thông tin",
       "create": "Tạo thông tin",
-      "choose-price": "Chọn giá",
-      "choose-payment": "chọn phương thức thanh toán",
-      "choose-province": "Chọn tỉnh thành"
+      "choose-price": "Giá khám",
+      "choose-payment": "Phương thức thanh toán",
+      "choose-province": "Tỉnh thành",
+      "nameClinic": "Tên phòng khám",
+      "addressClinic": "Địa chỉ phòng khám",
+      "note": "Ghi chú"
     }
   }
-  
 }
