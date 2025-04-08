@@ -22,12 +22,20 @@
     }
 
     .content-down {
+        .short-info {
+            .currency {
+                margin: 0 5px;
+            }
+
+            .show-price {
+                cursor: pointer;
+                color: rgb(57, 134, 211);
+            }
+        }
+
         .Price-title {}
 
-        .show-price {
-            cursor: pointer;
-            color: rgb(57, 134, 211);
-        }
+
 
         .detail-info {
             border: 1px solid #ddd;

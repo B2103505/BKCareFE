@@ -160,7 +160,12 @@
       "schedule": "Lịch khám",
       "no-schedule": "Không có lịch hẹn trong thời gian này, vui lòng chọn thời gian khác !!!",
       "choose": "Chọn ",
-      "book-free": " và đặt (miễn phí)"
+      "book-free": " và đặt (miễn phí)",
+      "address-clinic": "Địa chỉ khám",
+      "Price": "Giá khám",
+      "Show": "Xem chi tiết",
+      "Hide": "Ẩn bảng giá",
+      "payment": "Người bệnh có thể thanh toán bằng hình thức: "
     }
   },
   "admin": {

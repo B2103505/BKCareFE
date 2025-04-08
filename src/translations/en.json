@@ -160,7 +160,12 @@
       "schedule": "Schedule",
       "no-schedule": "The doctor doesn't have an appointment during this time, plz choose another time !!!",
       "choose": "Choose ",
-      "book-free": " and book (free)"
+      "book-free": " and book (free)",
+      "address-clinic": "Address of examination",
+      "Price": "Examination Price",
+      "Show": "Show detail",
+      "Hide": "Hide",
+      "payment": "Patients can make payments using the following methods: "
     }
   },
   "admin": {
