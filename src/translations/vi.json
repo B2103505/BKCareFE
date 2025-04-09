@@ -162,10 +162,22 @@
       "choose": "Chọn ",
       "book-free": " và đặt (miễn phí)",
       "address-clinic": "Địa chỉ khám",
-      "Price": "Giá khám",
+      "Price": "Giá khám : ",
       "Show": "Xem chi tiết",
       "Hide": "Ẩn bảng giá",
       "payment": "Người bệnh có thể thanh toán bằng hình thức: "
+    },
+    "booking-modal": {
+      "title":"Thông tin đặt lịch khám bệnh",
+      "book-free": "Miễn phí đặt lịch",
+      "fullname": "Họ và Tên",
+      "phoneNumber": "Số điện thoại",
+      "email": "Địa chỉ email",
+      "address": "địa chỉ liên hệ",
+      "reason": "lý do khám",
+      "gender": "Giới tính",
+      "confirm": "Xác nhận",
+      "cancel": "Hủy"
     }
   },
   "admin": {

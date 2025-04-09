@@ -162,10 +162,22 @@
       "choose": "Choose ",
       "book-free": " and book (free)",
       "address-clinic": "Address of examination",
-      "Price": "Examination Price",
+      "Price": "Examination Price : ",
       "Show": "Show detail",
       "Hide": "Hide",
       "payment": "Patients can make payments using the following methods: "
+    },
+    "booking-modal": {
+      "title": "Information for scheduling appointment",
+      "book-free": "Free appointment booking",
+      "fullname": "Fullname",
+      "phoneNumber": "Phone Number",
+      "email": "Email address",
+      "address": "contact address",
+      "reason": "reason for examination",
+      "gender": "Gender",
+      "confirm": "confirm",
+      "cancel": "cancel"
     }
   },
   "admin": {

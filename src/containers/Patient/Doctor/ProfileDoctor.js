@@ -46,7 +46,7 @@ class ProfileDoctor extends Component {
 
     renderTimeBooking = (dataScheduleModalTime) => {
         let { language } = this.props;
-        console.log('check dataSchedule', dataScheduleModalTime);
+        // console.log('check dataSchedule', dataScheduleModalTime);
         if (dataScheduleModalTime && !_.isEmpty(dataScheduleModalTime)) {
             let time = language === LANGUAGES.VI ?
                 dataScheduleModalTime.timeTypeData.valueVi
@@ -59,7 +59,9 @@ class ProfileDoctor extends Component {
             return (
                 <>
                     <div className='time-choose'>{time} - {date}</div>
-                    <div className='free-booking'>Mien Phi Dat Lich</div>
+                    <div className='free-booking'>
+                        <FormattedMessage id='patient.booking-modal.book-free' />
+                    </div>
                 </>
             )
         }
@@ -75,7 +77,7 @@ class ProfileDoctor extends Component {
             nameEn = `${dataProfile.positionData.valueEn} ${dataProfile.firstName} ${dataProfile.lastName}`
         }
 
-        console.log('check props', dataScheduleModalTime)
+        // console.log('check props', dataScheduleModalTime)
         return (
             <div className='profile-doctor-container'>
 
@@ -114,7 +116,7 @@ class ProfileDoctor extends Component {
                 </div>
 
                 <div className='price-modal'>
-                    Giá khám :
+                    <FormattedMessage id='patient.detail-doctor.Price' />
                     {dataProfile && dataProfile.Doctor_Info && language === LANGUAGES.VI ?
                         <NumberFormat
                             className='currency'
