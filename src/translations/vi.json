@@ -178,6 +178,10 @@
       "gender": "Giới tính",
       "confirm": "Xác nhận",
       "cancel": "Hủy"
+    },
+    "verify":{
+      "success": "Xác nhận lịch hẹn thành công",
+      "failed": "Lịch hẹn không tồn tại hoặc đã được xác nhận"
     }
   },
   "admin": {

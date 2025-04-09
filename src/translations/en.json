@@ -178,6 +178,10 @@
       "gender": "Gender",
       "confirm": "confirm",
       "cancel": "cancel"
+    },
+    "verify": {
+      "success": "Your appointment has been successfully confirmed",
+      "failed": "The appointment does not exist or has already been confirmed"
     }
   },
   "admin": {
