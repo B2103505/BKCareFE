@@ -5,7 +5,7 @@ import ModalBK from "./Modal/ModalBK";
 import { FormattedMessage } from "react-intl";
 import "./SpecialtySection.scss";
 
-function Section({ title, items }) {
+function Section({ title, items, onItemClick }) {
   const [selectedService, setSelectedService] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false); // Trạng thái mở rộng
 
@@ -18,34 +18,34 @@ function Section({ title, items }) {
       {/* Kiểm tra nếu đang ở chế độ kéo ngang thì dùng DragScroll */}
       {isExpanded ? (
         <div className="specialty-links-container expanded">
-          {items.map((item, index) => (
-            <div className="specialty-container" key={index}>
-              <button onClick={() => setSelectedService(item)}>
-                <div>
-                  <img src={item.img} alt={item.text} />
-                </div>
-                <span>
-                  <FormattedMessage id={item.text} />
-                </span>
-              </button>
-            </div>
-          ))}
+          {items.map((item, index) => {
+            return (
+              <div className="specialty-container" key={index}>
+                <button onClick={() => onItemClick(item)}>
+                  <div>
+                    <img src={item.image} alt={item.name} />
+                  </div>
+                  <span>{item.name}</span>
+                </button>
+              </div>
+            );
+          })}
         </div>
       ) : (
         <DragScroll>
           <div className="specialty-links-container">
-            {items.map((item, index) => (
-              <div className="specialty-container" key={index}>
-                <button onClick={() => setSelectedService(item)}>
-                  <div>
-                    <img src={item.img} alt={item.text} />
-                  </div>
-                  <span>
-                    <FormattedMessage id={item.text} />
-                  </span>
-                </button>
-              </div>
-            ))}
+            {items.map((item, index) => {
+              return (
+                <div className="specialty-container" key={index}>
+                  <button onClick={() => onItemClick(item)}>
+                    <div>
+                      <img src={item.image} alt={item.name} />
+                    </div>
+                    <span>{item.name}</span>
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </DragScroll>
       )}
