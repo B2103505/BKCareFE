@@ -15,7 +15,6 @@ class DetailSpecialty extends Component {
   constructor(props) {
     super(props);
     this.state = {
-<<<<<<< HEAD
       arrDoctorId: [],
       dataDetailSpecialty: {},
       listProvince: [],
@@ -28,13 +27,6 @@ class DetailSpecialty extends Component {
   async componentDidMount() {
     if (this.props.match && this.props.match.params && this.props.match.params.id) {
       let id = this.props.match.params.id;
-=======
-      arrDoctorId: [2, 14, 15, 16],
-    };
-  }
-
-  async componentDidMount() {}
->>>>>>> 1465f4171b07999c3146b09431efd18e53d64bdc
 
       let res = await getDetailSpecialtyById({
         id: id,
@@ -106,7 +98,6 @@ class DetailSpecialty extends Component {
         <div className="verify-container" style={{ height: "70px" }}></div>
 
         <div className="detail-specialty-body">
-<<<<<<< HEAD
 
           <div className="description-specialty">
             {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) &&
@@ -122,20 +113,13 @@ class DetailSpecialty extends Component {
               options={this.state.listProvince}
             />
           </div>
-=======
-          <div className="description-specialty">Hello from Specialty</div>
->>>>>>> 1465f4171b07999c3146b09431efd18e53d64bdc
 
           {arrDoctorId &&
             arrDoctorId.length > 0 &&
             arrDoctorId.map((item, index) => {
               return (
-<<<<<<< HEAD
                 <div className="each-doctor-specialty" key={item}>
 
-=======
-                <div className="each-doctor-specialty">
->>>>>>> 1465f4171b07999c3146b09431efd18e53d64bdc
                   <div className="detail-specialty-content-left">
                     <div className="profile-doctor">
                       <ProfileDoctor

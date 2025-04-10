@@ -140,12 +140,12 @@ class BookingModal extends Component {
     }
 
     BuildDoctorName = (dataScheduleModalTime) => {
-        let {language} = this.props;
-        if (dataScheduleModalTime && !_.isEmpty(dataScheduleModalTime)){
+        let { language } = this.props;
+        if (dataScheduleModalTime && !_.isEmpty(dataScheduleModalTime)) {
             let name = language === LANGUAGES.VI ?
-            `${dataScheduleModalTime.doctorData.lastName} ${dataScheduleModalTime.doctorData.firstName}`
-            :
-            `${dataScheduleModalTime.doctorData.firstName} ${dataScheduleModalTime.doctorData.lastName}`
+                `${dataScheduleModalTime.doctorData.lastName} ${dataScheduleModalTime.doctorData.firstName}`
+                :
+                `${dataScheduleModalTime.doctorData.firstName} ${dataScheduleModalTime.doctorData.lastName}`
             return name;
         }
         return ''
