@@ -89,6 +89,33 @@ class DetailClinic extends Component {
               ></div>
             </div>
           </div>
+
+          {arrDoctorId &&
+            arrDoctorId.length > 0 &&
+            arrDoctorId.map((item, index) => {
+              return (
+                <div className="each-doctor-specialty" key={item}>
+                  <div className="detail-specialty-content-left">
+                    <div className="profile-doctor">
+                      <ProfileDoctor
+                        doctorId={item}
+                        isShowDescDoctor={true}
+                        // dataScheduleModalTime={dataScheduleModalTime}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="detail-specialty-content-right">
+                    <div className="doctor-schedule">
+                      <DoctorSchedule doctorIdFromParent={item} key={index} />
+                    </div>
+                    <div className="doctor-extra-info">
+                      <DoctorExtraInfo doctorIdFromParent={item} />
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
         </div>
       </>
     );
