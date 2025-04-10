@@ -4,8 +4,8 @@ import "./DetailSpecialty.scss";
 import { LANGUAGES } from "../../../utils";
 import { FormattedMessage } from "react-intl";
 import HomeHeader from "../../HomePage/HomeHeader";
-import DoctorSchedule from '../Doctor/DoctorSchedule';
-import DoctorExtraInfo from '../Doctor/DoctorExtraInfo';
+import DoctorSchedule from "../Doctor/DoctorSchedule";
+import DoctorExtraInfo from "../Doctor/DoctorExtraInfo";
 import ProfileDoctor from "../Doctor/ProfileDoctor";
 import { getDetailSpecialtyById, getAllCodeService } from '../../../services/UserService'
 import _ from 'lodash';
@@ -15,6 +15,7 @@ class DetailSpecialty extends Component {
   constructor(props) {
     super(props);
     this.state = {
+<<<<<<< HEAD
       arrDoctorId: [],
       dataDetailSpecialty: {},
       listProvince: [],
@@ -27,6 +28,13 @@ class DetailSpecialty extends Component {
   async componentDidMount() {
     if (this.props.match && this.props.match.params && this.props.match.params.id) {
       let id = this.props.match.params.id;
+=======
+      arrDoctorId: [2, 14, 15, 16],
+    };
+  }
+
+  async componentDidMount() {}
+>>>>>>> 1465f4171b07999c3146b09431efd18e53d64bdc
 
       let res = await getDetailSpecialtyById({
         id: id,
@@ -98,6 +106,7 @@ class DetailSpecialty extends Component {
         <div className="verify-container" style={{ height: "70px" }}></div>
 
         <div className="detail-specialty-body">
+<<<<<<< HEAD
 
           <div className="description-specialty">
             {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) &&
@@ -113,45 +122,43 @@ class DetailSpecialty extends Component {
               options={this.state.listProvince}
             />
           </div>
+=======
+          <div className="description-specialty">Hello from Specialty</div>
+>>>>>>> 1465f4171b07999c3146b09431efd18e53d64bdc
 
-          {arrDoctorId && arrDoctorId.length > 0 &&
+          {arrDoctorId &&
+            arrDoctorId.length > 0 &&
             arrDoctorId.map((item, index) => {
               return (
+<<<<<<< HEAD
                 <div className="each-doctor-specialty" key={item}>
 
+=======
+                <div className="each-doctor-specialty">
+>>>>>>> 1465f4171b07999c3146b09431efd18e53d64bdc
                   <div className="detail-specialty-content-left">
                     <div className="profile-doctor">
                       <ProfileDoctor
                         doctorId={item}
                         isShowDescDoctor={true}
-                      // dataScheduleModalTime={dataScheduleModalTime}
+                        // dataScheduleModalTime={dataScheduleModalTime}
                       />
                     </div>
                   </div>
 
                   <div className="detail-specialty-content-right">
-
                     <div className="doctor-schedule">
-                      <DoctorSchedule
-                        doctorIdFromParent={item}
-                        key={index}
-                      />
+                      <DoctorSchedule doctorIdFromParent={item} key={index} />
                     </div>
                     <div className="doctor-extra-info">
-                      <DoctorExtraInfo
-                        doctorIdFromParent={item}
-                      />
+                      <DoctorExtraInfo doctorIdFromParent={item} />
                     </div>
-
                   </div>
-
                 </div>
-              )
-            })
-          }
+              );
+            })}
         </div>
-
-      </div >
+      </div>
     );
   }
 }
