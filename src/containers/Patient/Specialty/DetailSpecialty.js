@@ -7,26 +7,91 @@ import HomeHeader from "../../HomePage/HomeHeader";
 import DoctorSchedule from '../Doctor/DoctorSchedule';
 import DoctorExtraInfo from '../Doctor/DoctorExtraInfo';
 import ProfileDoctor from "../Doctor/ProfileDoctor";
+import { getDetailSpecialtyById, getAllCodeService } from '../../../services/UserService'
+import _ from 'lodash';
+import Select from 'react-select';
 
 class DetailSpecialty extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      arrDoctorId: [14, 15, 16],
-
+      arrDoctorId: [],
+      dataDetailSpecialty: {},
+      listProvince: [],
+      listProvinceRaw: [],
+      selectedProvince: '',
+      provinceId: ''
     };
   }
 
-  async componentDidMount() { }
+  async componentDidMount() {
+    if (this.props.match && this.props.match.params && this.props.match.params.id) {
+      let id = this.props.match.params.id;
 
-  async componentDidUpdate(prevProps, prevState, snapshot) {
-    if (this.props.language !== prevProps.language) {
+      let res = await getDetailSpecialtyById({
+        id: id,
+        location: 'ALL'
+      });
+
+      let resProvince = await getAllCodeService('PROVINCE')
+
+      if (res && res.errCode === 0 && resProvince && resProvince.errCode === 0) {
+        let data = res.data;
+        let arrDoctorId = [];
+        if (data && !_.isEmpty(res.data)) {
+          let arr = data.doctorSpecialty;
+          if (arr && arr.length > 0) {
+            arr.map(item => {
+              arrDoctorId.push(item.doctorId)
+            })
+          }
+        }
+        let rawProvince = resProvince.data;
+        let buildProvince = this.buildDataProvince(rawProvince);
+        this.setState({
+          dataDetailSpecialty: res.data,
+          arrDoctorId: arrDoctorId,
+          listProvince: buildProvince,
+          listProvinceRaw: rawProvince
+        })
+      }
     }
   }
 
-  render() {
-    let { arrDoctorId } = this.state;
+  async componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.language !== this.props.language) {
+      let newListProvince = this.buildDataProvince(this.state.listProvinceRaw); // giữ 1 state gốc
+      this.setState({
+        listProvince: newListProvince
+      });
+    }
+  }
 
+  buildDataProvince = (data) => {
+    let result = [];
+    let language = this.props.language
+    if (data && data.length > 0) {
+      data.map(item => {
+        let obj = {};
+        obj.label = language === LANGUAGES.VI ? item.valueVi : item.valueEn;
+        obj.value = item.keyMap;
+        result.push(obj);
+      })
+    }
+    return result
+  }
+
+  handleChangeProvince = async (selectedOption) => {
+    this.setState({
+      selectedProvince: selectedOption
+    })
+
+  }
+
+  render() {
+    let { arrDoctorId, dataDetailSpecialty } = this.state;
+    let { language } = this.props;
+    console.log('selected Province', this.state.selectedProvince)
     return (
       <div className="detail-specialty-container">
         <HomeHeader />
@@ -34,12 +99,25 @@ class DetailSpecialty extends Component {
 
         <div className="detail-specialty-body">
 
-          <div className="description-specialty">Hello from Specialty</div>
+          <div className="description-specialty">
+            {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) &&
+              <div dangerouslySetInnerHTML={{ __html: dataDetailSpecialty.descriptionHTML }}>
+              </div>
+            }
+          </div>
+
+          <div className="search-doctor-by-province">
+            <Select
+              value={this.state.selectedProvince}
+              onChange={this.handleChangeProvince}
+              options={this.state.listProvince}
+            />
+          </div>
 
           {arrDoctorId && arrDoctorId.length > 0 &&
             arrDoctorId.map((item, index) => {
               return (
-                <div className="each-doctor-specialty">
+                <div className="each-doctor-specialty" key={item}>
 
                   <div className="detail-specialty-content-left">
                     <div className="profile-doctor">
