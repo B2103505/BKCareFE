@@ -224,6 +224,9 @@ class ManageDoctor extends Component {
                     return item && item.value === clinicId;
                   });
                 
+                  selectedSpecialty = listSpecialty.find(item => {
+                    return item && item.value === specialtyId
+                })
             }
 
             this.setState({
@@ -423,9 +426,7 @@ class ManageDoctor extends Component {
                         value={this.state.contentMarkdown} />
 
                 </div>
-
-
-
+            
 
         <button
           onClick={() => {
@@ -434,8 +435,7 @@ class ManageDoctor extends Component {
           className={hasOldData === true ? "save-content-doctor" : "create-content-doctor"}
         >
           {hasOldData === true ? (
-            <span>
-              <FormattedMessage id="admin.manage-doctor.save" />
+            <span>              <FormattedMessage id="admin.manage-doctor.save" />
             </span>
           ) : (
             <span>
