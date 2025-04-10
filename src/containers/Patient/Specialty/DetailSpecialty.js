@@ -9,7 +9,6 @@ import DoctorExtraInfo from "../Doctor/DoctorExtraInfo";
 import ProfileDoctor from "../Doctor/ProfileDoctor";
 import { getDetailSpecialtyById, getAllCodeService } from '../../../services/UserService'
 import _ from 'lodash';
-import Select from 'react-select';
 
 class DetailSpecialty extends Component {
   constructor(props) {
@@ -18,7 +17,6 @@ class DetailSpecialty extends Component {
       arrDoctorId: [],
       dataDetailSpecialty: {},
       listProvince: [],
-      listProvinceRaw: [],
       selectedProvince: '',
       provinceId: ''
     };
@@ -46,52 +44,69 @@ class DetailSpecialty extends Component {
             })
           }
         }
-        let rawProvince = resProvince.data;
-        let buildProvince = this.buildDataProvince(rawProvince);
+
+        let dataProvince = resProvince.data;
+        if (dataProvince && dataProvince.length > 0) {
+          dataProvince.unshift({
+            createdAt: null,
+            keyMap: 'ALL',
+            type: 'PROVINCE',
+            valueEn: 'ALL',
+            valueVi: 'Toàn quốc'
+          })
+        }
+
         this.setState({
           dataDetailSpecialty: res.data,
           arrDoctorId: arrDoctorId,
-          listProvince: buildProvince,
-          listProvinceRaw: rawProvince
+          listProvince: dataProvince ? dataProvince : []
         })
       }
     }
   }
 
+
   async componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.language !== this.props.language) {
-      let newListProvince = this.buildDataProvince(this.state.listProvinceRaw); // giữ 1 state gốc
-      this.setState({
-        listProvince: newListProvince
+
+    }
+  }
+
+  //Thay đổi tỉnh thành
+  handleOnChangeSelectProvince = async (event) => {
+    if (this.props.match && this.props.match.params && this.props.match.params.id) {
+      let id = this.props.match.params.id;
+      let location = event.target.value;
+
+      let res = await getDetailSpecialtyById({
+        id: id,
+        location: location
       });
+
+      if (res && res.errCode === 0) {
+        let data = res.data;
+        let arrDoctorId = [];
+        if (data && !_.isEmpty(res.data)) {
+          let arr = data.doctorSpecialty;
+          if (arr && arr.length > 0) {
+            arr.map(item => {
+              arrDoctorId.push(item.doctorId)
+            })
+          }
+
+        }
+        this.setState({
+          dataDetailSpecialty: res.data,
+          arrDoctorId: arrDoctorId,
+        })
+      }
     }
-  }
-
-  buildDataProvince = (data) => {
-    let result = [];
-    let language = this.props.language
-    if (data && data.length > 0) {
-      data.map(item => {
-        let obj = {};
-        obj.label = language === LANGUAGES.VI ? item.valueVi : item.valueEn;
-        obj.value = item.keyMap;
-        result.push(obj);
-      })
-    }
-    return result
-  }
-
-  handleChangeProvince = async (selectedOption) => {
-    this.setState({
-      selectedProvince: selectedOption
-    })
-
   }
 
   render() {
-    let { arrDoctorId, dataDetailSpecialty } = this.state;
+    let { arrDoctorId, dataDetailSpecialty, listProvince } = this.state;
     let { language } = this.props;
-    console.log('selected Province', this.state.selectedProvince)
+    console.log('selected Province', this.state)
     return (
       <div className="detail-specialty-container">
         <HomeHeader />
@@ -106,12 +121,18 @@ class DetailSpecialty extends Component {
           </div>
 
           <div className="search-doctor-by-province">
-             <Select
-               value={this.state.selectedProvince}
-               onChange={this.handleChangeProvince}
-               options={this.state.listProvince}
-             />
-           </div>
+            <select onChange={(event) => this.handleOnChangeSelectProvince(event)}>
+              {listProvince && listProvince.length > 0 &&
+                listProvince.map((item, index) => {
+                  return (
+                    <option key={index} value={item.keyMap}>
+                      {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
+                    </option>
+                  )
+                })
+              }
+            </select>
+          </div>
 
           {arrDoctorId &&
             arrDoctorId.length > 0 &&
@@ -123,6 +144,8 @@ class DetailSpecialty extends Component {
                       <ProfileDoctor
                         doctorId={item}
                         isShowDescDoctor={true}
+                        isShowLinkDetail={true}
+                        isShowPrice={false}
                       // dataScheduleModalTime={dataScheduleModalTime}
                       />
                     </div>

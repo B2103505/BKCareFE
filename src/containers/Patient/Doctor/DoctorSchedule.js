@@ -24,6 +24,12 @@ class DoctorSchedule extends Component {
     async componentDidMount() {
         let { language } = this.props;
         let arrDate = this.getArrDays(language);
+        if (this.props.doctorIdFromParent) {
+            let res = await getScheduleDoctorByDate(this.props.doctorIdFromParent, arrDate[0].value);
+            this.setState({
+                allAvailableTime: res.data ? res.data : []
+            })
+        }
         this.setState({
             allDays: arrDate,
         })
@@ -98,7 +104,7 @@ class DoctorSchedule extends Component {
             dataScheduleModal: time
         })
         // console.log('check time', time)
-    }   
+    }
 
     closeBookingModal = () => {
         this.setState({
@@ -142,7 +148,7 @@ class DoctorSchedule extends Component {
                                             let timeDisplay = language === LANGUAGES.VI ?
                                                 item.timeTypeData.valueVi : item.timeTypeData.valueEn;
                                             return (
-                                                <button 
+                                                <button
                                                     key={index}
                                                     className={language === LANGUAGES.VI ? 'btn-vi' : 'btn-en'}
                                                     onClick={() => this.handleClickSchedule(item)}
@@ -167,10 +173,10 @@ class DoctorSchedule extends Component {
                         </div>
                     </div>
                 </div>
-                <BookingModal 
-                    isOpenModal = {isOpenModalBooking} 
-                    closeBookingModal = {this.closeBookingModal}
-                    dataScheduleModalTime = {dataScheduleModal}
+                <BookingModal
+                    isOpenModal={isOpenModalBooking}
+                    closeBookingModal={this.closeBookingModal}
+                    dataScheduleModalTime={dataScheduleModal}
                 />
             </>
         );
