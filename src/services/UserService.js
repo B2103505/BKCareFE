@@ -89,6 +89,10 @@ const getAllClinic = () => {
   return axios.get(`/api/get-all-clinic`);
 };
 
+const getClinicById = (data) => {
+  return axios.get(`/api/get-detail-clinic-by-id?id=${data.id}`);
+};
+
 export {
   handleLoginApi,
   GetAllUsers,
@@ -110,4 +114,5 @@ export {
   getAllSpecialty,
   CreateClinic,
   getAllClinic,
+  getClinicById,
 };

@@ -21,7 +21,7 @@ function HospitalSection() {
   }, []);
 
   const handleViewDetailClinic = (item) => {
-    history.push(`/detail-specialty/${item.id}`);
+    history.push(`/detail-clinic/${item.id}`);
   };
 
   return <Section title="hospital.name" items={dataClinic} onItemClick={handleViewDetailClinic} />;
