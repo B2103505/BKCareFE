@@ -18,7 +18,6 @@ class DetailSpecialty extends Component {
       arrDoctorId: [],
       dataDetailSpecialty: {},
       listProvince: [],
-      listProvinceRaw: [],
       selectedProvince: '',
       provinceId: ''
     };
@@ -46,13 +45,11 @@ class DetailSpecialty extends Component {
             })
           }
         }
-        let rawProvince = resProvince.data;
-        let buildProvince = this.buildDataProvince(rawProvince);
+
         this.setState({
           dataDetailSpecialty: res.data,
           arrDoctorId: arrDoctorId,
-          listProvince: buildProvince,
-          listProvinceRaw: rawProvince
+          listProvince: resProvince.data,
         })
       }
     }
@@ -60,38 +57,19 @@ class DetailSpecialty extends Component {
 
   async componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.language !== this.props.language) {
-      let newListProvince = this.buildDataProvince(this.state.listProvinceRaw); // giữ 1 state gốc
-      this.setState({
-        listProvince: newListProvince
-      });
+
     }
   }
 
-  buildDataProvince = (data) => {
-    let result = [];
-    let language = this.props.language
-    if (data && data.length > 0) {
-      data.map(item => {
-        let obj = {};
-        obj.label = language === LANGUAGES.VI ? item.valueVi : item.valueEn;
-        obj.value = item.keyMap;
-        result.push(obj);
-      })
-    }
-    return result
-  }
-
-  handleChangeProvince = async (selectedOption) => {
-    this.setState({
-      selectedProvince: selectedOption
-    })
+  handleOnChangeSelectProvince = (event) => {
+    console.log('check select on change', event.target.value)
 
   }
 
   render() {
-    let { arrDoctorId, dataDetailSpecialty } = this.state;
+    let { arrDoctorId, dataDetailSpecialty, listProvince } = this.state;
     let { language } = this.props;
-    console.log('selected Province', this.state.selectedProvince)
+    console.log('selected Province', this.state)
     return (
       <div className="detail-specialty-container">
         <HomeHeader />
@@ -106,11 +84,22 @@ class DetailSpecialty extends Component {
           </div>
 
           <div className="search-doctor-by-province">
-             <Select
+             {/* <Select
                value={this.state.selectedProvince}
                onChange={this.handleChangeProvince}
                options={this.state.listProvince}
-             />
+             /> */}
+             <select onChange={(event) => this.handleOnChangeSelectProvince(event)}>
+              {listProvince && listProvince.length > 0 &&
+              listProvince.map((item, index) => {
+                return(
+                <option key={index} value={item.keyMap}>
+                  {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
+                </option>
+                )
+              })
+              }
+             </select>
            </div>
 
           {arrDoctorId &&

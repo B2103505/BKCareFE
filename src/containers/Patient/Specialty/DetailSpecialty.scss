@@ -6,12 +6,19 @@
 
     .description-specialty {
         height: 100%;
-        border: 1px solid red;
+        padding: 5px;
+        background-color: #ddd;
+
+        h1,
+        h2,
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
     }
 
-    .search-doctor-by-province{
-        
-    }
+    .search-doctor-by-province {}
 
     .each-doctor-specialty {
         display: flex;
