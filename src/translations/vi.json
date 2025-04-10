@@ -31,6 +31,7 @@
     },
     "doctor": {
       "manage-schedule": "Quản lý kế hoạch khám bệnh",
+      "manage-patient": "Quản lý bệnh nhân khám bệnh",
       "schedule": "kế hoạch"
     }
   },
@@ -168,7 +169,7 @@
       "payment": "Người bệnh có thể thanh toán bằng hình thức: "
     },
     "booking-modal": {
-      "title":"Thông tin đặt lịch khám bệnh",
+      "title": "Thông tin đặt lịch khám bệnh",
       "book-free": "Miễn phí đặt lịch",
       "fullname": "Họ và Tên",
       "phoneNumber": "Số điện thoại",
@@ -179,7 +180,7 @@
       "confirm": "Xác nhận",
       "cancel": "Hủy"
     },
-    "verify":{
+    "verify": {
       "success": "Xác nhận lịch hẹn thành công",
       "failed": "Lịch hẹn không tồn tại hoặc đã được xác nhận"
     }
@@ -200,5 +201,16 @@
       "choose-specialty": "Chọn chuyên khoa",
       "choose-clinic": "Chọn phòng khám"
     }
+  },
+  "manage-patient": {
+    "title": "Quản lý bệnh nhân khám bệnh",
+    "choose-date": "Chọn ngày khám",
+    "time": "Thời gian",
+    "fullname": "Họ và tên",
+    "gender": "Giới tính",
+    "actions": "Thao tác",
+    "confirm": "Xác nhận",
+    "invoice": "Gửi hóa đơn",
+    "no-data": "Không có dữ liệu"
   }
 }

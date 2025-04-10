@@ -31,6 +31,7 @@
     },
     "doctor": {
       "manage-schedule": "Manage Doctor's schedule",
+      "manage-patient": "Manage Doctor's patient",
       "schedule": "Schedule"
     }
   },
@@ -200,5 +201,17 @@
       "choose-specialty": "Choose Specialty",
       "choose-clinic": "Choose Clinic"
     }
+  },
+
+  "manage-patient": {
+    "title": "Manage Patients",
+    "choose-date": "Choose date",
+    "time": "Time",
+    "fullname": "Full Name",
+    "gender": "Gender",
+    "actions": "Actions",
+    "confirm": "Confirm",
+    "invoice": "Send an invoice",
+    "no-data": "No data available"
   }
 }

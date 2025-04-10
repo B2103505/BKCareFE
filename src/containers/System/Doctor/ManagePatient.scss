@@ -1,0 +1,46 @@
+.manage-patient-container {
+  .m-p-title {
+    font-size: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .manage-patient-body {
+    padding: 0 1.2rem;
+
+    .form-control {
+      border: 1px solid #b2b2b2;
+      margin-bottom: 1rem;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #0056b3; /* Màu viền khi focus */
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    .table-manage-patient {
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+
+        td,
+        th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+
+        td {
+          button {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
