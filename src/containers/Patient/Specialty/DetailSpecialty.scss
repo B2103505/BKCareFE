@@ -1,13 +1,15 @@
 .detail-specialty-container {
+    background-color: #eee;
 
     .detail-specialty-body {
         margin: 0 10%;
+
     }
 
     .description-specialty {
         height: 100%;
         padding: 5px;
-        background-color: #ddd;
+        background-color: white;
 
         h1,
         h2,
@@ -18,12 +20,30 @@
 
     }
 
-    .search-doctor-by-province {}
+    .search-doctor-by-province {
+        margin-top: 10px;
+
+        select {
+            font-size: 17px;
+            border-radius: 5px;
+            padding: 3px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: rgb(189, 233, 226);
+
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+
+
+    }
 
     .each-doctor-specialty {
         display: flex;
         width: 100%;
-        min-height: 400px;
+        min-height: 350px;
         margin: 15px 0;
         padding: 5px;
         background-color: #fff;

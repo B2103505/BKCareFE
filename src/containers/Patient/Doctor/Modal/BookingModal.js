@@ -183,6 +183,9 @@ class BookingModal extends Component {
                                 doctorId={doctorId}
                                 isShowDescDoctor={false}
                                 dataScheduleModalTime={dataScheduleModalTime}
+                                isShowPrice={true}
+                                isShowLinkDetail={false}
+
                             />
                         </div>
 
