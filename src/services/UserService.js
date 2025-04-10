@@ -81,6 +81,11 @@ const getAllSpecialty = () => {
   return axios.get(`/api/get-all-specialty`);
 };
 
+const getDetailSpecialtyById = (data) => {
+  return axios.get(`/api/get-detail-specialty-byId?id=${data.id}&location=${data.location}`);
+};
+
+
 const CreateClinic = (data) => {
   return axios.post("/api/create-new-clinic", data);
 };
@@ -89,9 +94,13 @@ const getAllClinic = () => {
   return axios.get(`/api/get-all-clinic`);
 };
 
+<<<<<<< HEAD
+
+=======
 const getClinicById = (data) => {
   return axios.get(`/api/get-detail-clinic-by-id?id=${data.id}`);
 };
+>>>>>>> 1465f4171b07999c3146b09431efd18e53d64bdc
 
 export {
   handleLoginApi,
@@ -112,6 +121,7 @@ export {
   PostVerifyBookAppointment,
   CreateNewSpecialty,
   getAllSpecialty,
+  getDetailSpecialtyById,
   CreateClinic,
   getAllClinic,
   getClinicById,
