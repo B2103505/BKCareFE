@@ -74,21 +74,20 @@ class DetailClinic extends Component {
         <HomeHeader />
         <div className="verify-container" style={{ height: "70px" }}></div>
 
-        <div className="detail-specialty-body">
-          <div className="description-specialty">Hello from Clinic</div>
-
+        <div className="detail-clinic-body">
           <div className="clinic-info-container">
-            <div className="clinic-header">
-              <h2>{dataDetailClinic.name}</h2>
-              <p>{dataDetailClinic.address}</p>
-            </div>
             <div className="clinic-image">
               {dataDetailClinic.image && <img src={this.state.imageSrc} alt="clinic" />}
             </div>
-            <div
-              className="clinic-description"
-              dangerouslySetInnerHTML={{ __html: dataDetailClinic.descriptionHTML }}
-            ></div>
+
+            <div className="clinic-header">
+              <h2>Bệnh viện {dataDetailClinic.name}</h2>
+              <p className="clinic_address">{dataDetailClinic.address}</p>
+              <div
+                className="clinic-description"
+                dangerouslySetInnerHTML={{ __html: dataDetailClinic.descriptionHTML }}
+              ></div>
+            </div>
           </div>
         </div>
       </>

@@ -1,0 +1,43 @@
+.clinic-info-container {
+  margin: 3rem 10%;
+  border: 1px solid red;
+
+  display: flex;
+
+  .clinic-image {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 50%;
+      max-height: 100px;
+      object-fit: cover;
+    }
+  }
+
+  .clinic-header {
+    max-height: 200px; // chiều cao tối đa bạn muốn hiển thị trước
+    overflow-y: auto; // hiện scroll dọc khi vượt quá
+    padding-right: 10px; // tránh che mất chữ khi có scrollbar
+
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fafafa;
+
+    /* Ẩn scrollbar (Chrome, Edge, Safari) */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Ẩn scrollbar (Firefox) */
+    scrollbar-width: none;
+
+    .clinic_address {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+}
