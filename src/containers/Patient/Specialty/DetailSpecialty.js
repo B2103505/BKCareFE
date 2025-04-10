@@ -15,11 +15,48 @@ class DetailSpecialty extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      arrDoctorId: [2, 14, 15, 16],
+      arrDoctorId: [],
+      dataDetailSpecialty: {},
+      listProvince: [],
+      listProvinceRaw: [],
+      selectedProvince: '',
+      provinceId: ''
     };
   }
 
-  async componentDidMount() {}
+  async componentDidMount() {
+    if (this.props.match && this.props.match.params && this.props.match.params.id) {
+      let id = this.props.match.params.id;
+
+      let res = await getDetailSpecialtyById({
+        id: id,
+        location: 'ALL'
+      });
+
+      let resProvince = await getAllCodeService('PROVINCE')
+
+      if (res && res.errCode === 0 && resProvince && resProvince.errCode === 0) {
+        let data = res.data;
+        let arrDoctorId = [];
+        if (data && !_.isEmpty(res.data)) {
+          let arr = data.doctorSpecialty;
+          if (arr && arr.length > 0) {
+            arr.map(item => {
+              arrDoctorId.push(item.doctorId)
+            })
+          }
+        }
+        let rawProvince = resProvince.data;
+        let buildProvince = this.buildDataProvince(rawProvince);
+        this.setState({
+          dataDetailSpecialty: res.data,
+          arrDoctorId: arrDoctorId,
+          listProvince: buildProvince,
+          listProvinceRaw: rawProvince
+        })
+      }
+    }
+  }
 
   async componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.language !== this.props.language) {
@@ -61,19 +98,32 @@ class DetailSpecialty extends Component {
         <div className="verify-container" style={{ height: "70px" }}></div>
 
         <div className="detail-specialty-body">
-          <div className="description-specialty">Hello from Specialty</div>
+          <div className="description-specialty">
+            {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) &&
+              <div dangerouslySetInnerHTML={{ __html: dataDetailSpecialty.descriptionHTML }}>
+              </div>
+            }
+          </div>
+
+          <div className="search-doctor-by-province">
+             <Select
+               value={this.state.selectedProvince}
+               onChange={this.handleChangeProvince}
+               options={this.state.listProvince}
+             />
+           </div>
 
           {arrDoctorId &&
             arrDoctorId.length > 0 &&
             arrDoctorId.map((item, index) => {
               return (
-                <div className="each-doctor-specialty">
+                <div className="each-doctor-specialty" key={item}>
                   <div className="detail-specialty-content-left">
                     <div className="profile-doctor">
                       <ProfileDoctor
                         doctorId={item}
                         isShowDescDoctor={true}
-                        // dataScheduleModalTime={dataScheduleModalTime}
+                      // dataScheduleModalTime={dataScheduleModalTime}
                       />
                     </div>
                   </div>
