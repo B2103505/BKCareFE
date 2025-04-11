@@ -107,11 +107,14 @@ class ManagePatient extends Component {
   };
 
   sendRemedy = async (dataChild) => {
+    console.log("Hello: ", dataChild);
+
     let { dataModal } = this.state;
 
     let res = await postSendRemedy({
       email: dataChild.email,
       imgBase64: dataChild.imgBase64,
+      note: dataChild.note,
       doctorId: dataModal.doctorId,
       doctorName: dataModal.doctorName,
       patientId: dataModal.patientId,
