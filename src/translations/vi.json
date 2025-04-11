@@ -210,7 +210,12 @@
     "gender": "Giới tính",
     "actions": "Thao tác",
     "confirm": "Xác nhận",
-    "invoice": "Gửi hóa đơn",
-    "no-data": "Không có dữ liệu"
+    "no-data": "Không có dữ liệu",
+    "remedy": "Xác nhận đơn thuốc",
+    "note": "Ghi chú",
+    "send": "Gửi",
+    "cancel": "Hủy bỏ",
+    "patient-name": "Tên bệnh nhân",
+    "remedy-file": "Chọn file đơn thuốc"
   }
 }

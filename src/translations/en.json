@@ -211,7 +211,12 @@
     "gender": "Gender",
     "actions": "Actions",
     "confirm": "Confirm",
-    "invoice": "Send an invoice",
-    "no-data": "No data available"
+    "no-data": "No data available",
+    "remedy": "Confirm Remedy",
+    "note": "Note",
+    "send": "Send",
+    "cancel": "Cancel",
+    "patient-name": "Patient name",
+    "remedy-file": "Choose Remedy file"
   }
 }
