@@ -220,5 +220,20 @@
     "patient-name": "Patient name",
     "remedy-file": "Choose Remedy file",
     "emailLoading": "Sending email..."
+  },
+  "manage-clinic": {
+    "title": "Clinic Management",
+    "name": "Clinic Name",
+    "image": "Clinic Image",
+    "address": "Clinic Address",
+    "description": "Clinic Description",
+    "save": "Save"
+  },
+  "manage-specialty": {
+    "title": "Specialty Management",
+    "name": "Specialty Name",
+    "image": "Specialty Image",
+    "description": "Specialty Description",
+    "save": "Save"
   }
 }

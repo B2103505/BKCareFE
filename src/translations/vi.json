@@ -219,5 +219,20 @@
     "patient-name": "Tên bệnh nhân",
     "remedy-file": "Chọn file đơn thuốc",
     "emailLoading": "Đang gửi email..."
+  },
+  "manage-clinic": {
+    "title": "Quản lý phòng khám",
+    "name": "Tên phòng khám",
+    "image": "Ảnh phòng khám",
+    "address": "Địa chỉ phòng khám",
+    "description": "Mô tả phòng khám",
+    "save": "Lưu"
+  },
+  "manage-specialty": {
+    "title": "Quản lý chuyên khoa",
+    "name": "Tên chuyên khoa",
+    "image": "Ảnh chuyên khoa",
+    "description": "Mô tả chuyên khoa",
+    "save": "Lưu"
   }
 }

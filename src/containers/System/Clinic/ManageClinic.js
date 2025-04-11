@@ -79,13 +79,17 @@ class ManageClinic extends Component {
   render() {
     return (
       <div className="manage-specialty-container">
-        <div className="manage-specialty-title">Quản lý phòng khám</div>
+        <div className="manage-specialty-title">
+          <FormattedMessage id="manage-clinic.title" />
+        </div>
 
         <div className="btn-add-new-specialty"></div>
 
         <div className="add-new-specialty row">
           <div className="col-6 form-group">
-            <label>Tên phòng khám</label>
+            <label>
+              <FormattedMessage id="manage-clinic.name" />
+            </label>
             <input
               className="form-control"
               type="text"
@@ -97,7 +101,9 @@ class ManageClinic extends Component {
           </div>
 
           <div className="col-6 form-group">
-            <label>Ảnh phòng khám</label>
+            <label>
+              <FormattedMessage id="manage-clinic.image" />
+            </label>
             <input
               className="form-control"
               type="file"
@@ -108,7 +114,9 @@ class ManageClinic extends Component {
           </div>
 
           <div className="col-6 form-group">
-            <label>Địa chỉ phòng khám</label>
+            <label>
+              <FormattedMessage id="manage-clinic.address" />
+            </label>
             <input
               className="form-control"
               type="text"
