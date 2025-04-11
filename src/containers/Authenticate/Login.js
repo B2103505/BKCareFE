@@ -38,6 +38,8 @@ class Login extends Component {
     });
     try {
       let data = await handleLoginApi(this.state.username, this.state.password);
+
+      // console.log(data);
       //check Loi
       if (data && data.errCode !== 0) {
         this.setState({
@@ -47,6 +49,14 @@ class Login extends Component {
       //Redux luu thong tin user
       if (data && data.errCode === 0) {
         this.props.userLoginSuccess(data.user);
+
+        if (data.user.roleId === "R1") {
+          this.props.navigate("/system/user-manage");
+        } else if (data.user.roleId === "R2") {
+          this.props.navigate("/doctor/manage-schedule");
+        } else {
+          this.props.navigate("/home");
+        }
       }
       // console.log('hello',data);
     } catch (error) {
@@ -67,10 +77,11 @@ class Login extends Component {
   };
 
   handleKeyDown = (event) => {
-    if (event.key === 'Enter'){ // || event.keyCode === 13
+    if (event.key === "Enter") {
+      // || event.keyCode === 13
       this.handleLogin();
     }
-  }
+  };
 
   render() {
     return (
@@ -98,7 +109,7 @@ class Login extends Component {
                   placeholder="Enter your password"
                   value={this.state.password}
                   onChange={(event) => this.handleOnChangePassword(event)}
-                  onKeyDown={(event)=> this.handleKeyDown(event)}
+                  onKeyDown={(event) => this.handleKeyDown(event)}
                 />
                 <span
                   onClick={() => {
