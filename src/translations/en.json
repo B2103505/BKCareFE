@@ -217,6 +217,7 @@
     "send": "Send",
     "cancel": "Cancel",
     "patient-name": "Patient name",
-    "remedy-file": "Choose Remedy file"
+    "remedy-file": "Choose Remedy file",
+    "emailLoading": "Sending email..."
   }
 }

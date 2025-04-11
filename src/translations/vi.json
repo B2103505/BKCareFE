@@ -216,6 +216,7 @@
     "send": "Gửi",
     "cancel": "Hủy bỏ",
     "patient-name": "Tên bệnh nhân",
-    "remedy-file": "Chọn file đơn thuốc"
+    "remedy-file": "Chọn file đơn thuốc",
+    "emailLoading": "Đang gửi email..."
   }
 }

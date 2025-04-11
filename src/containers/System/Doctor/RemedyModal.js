@@ -15,6 +15,7 @@ class RemedyModal extends Component {
       note: "",
       name: "",
       imgBase64: "",
+      isLoading: false,
     };
   }
 
@@ -64,20 +65,30 @@ class RemedyModal extends Component {
     }
   };
 
-  handleConfirm = () => {
-    const { email, note } = this.state;
+  handleConfirm = async () => {
+    const { email } = this.state;
     if (!email) {
       toast.error("Email is required!");
       return;
     }
+    if (!this.state.imgBase64) {
+      toast.error("Please select a remedy file!");
+      return;
+    }
+    this.setState({ isLoading: true });
 
-    console.log("Hello", this.state);
+    try {
+      // Gọi hàm gửi từ cha và chờ hoàn tất
+      await this.props.sendRemedy(this.state);
 
-    // Gửi dữ liệu về cha hoặc call API
-    this.props.sendRemedy(this.state);
+      // Đóng modal
+      this.props.closeRemedyModal();
+    } catch (error) {
+      toast.error("Đã xảy ra lỗi khi gửi email!");
+      console.error(error);
+    }
 
-    // Tắt modal
-    this.props.closeRemedyModal();
+    this.setState({ isLoading: false });
   };
 
   render() {
@@ -86,6 +97,15 @@ class RemedyModal extends Component {
 
     return (
       <Modal isOpen={isOpenModal} className="remedy-modal-container" size="md" centered>
+        {this.state.isLoading && (
+          <div className="loading-overlay">
+            <div className="spinner" />
+            <div className="text">
+              <FormattedMessage id="manage-patient.emailLoading" defaultMessage="Sending email..." />
+            </div>
+          </div>
+        )}
+
         <ModalHeader toggle={closeRemedyModal}>
           <FormattedMessage id="manage-patient.remedy" defaultMessage="Confirm Remedy" />
         </ModalHeader>
@@ -103,9 +123,7 @@ class RemedyModal extends Component {
               />
             </div>
             <div className="form-group">
-              <label>
-                <FormattedMessage id="manage-patient.email" defaultMessage="Email" />
-              </label>
+              <label>Email</label>
               <input
                 type="email"
                 className="form-control"
@@ -132,7 +150,7 @@ class RemedyModal extends Component {
           </div>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={this.handleConfirm}>
+          <Button color="primary" onClick={this.handleConfirm} disabled={this.state.isLoading}>
             <FormattedMessage id="manage-patient.send" defaultMessage="Send" />
           </Button>
           <Button color="secondary" onClick={closeRemedyModal}>
