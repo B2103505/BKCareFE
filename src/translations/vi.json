@@ -178,7 +178,8 @@
       "reason": "lý do khám",
       "gender": "Giới tính",
       "confirm": "Xác nhận",
-      "cancel": "Hủy"
+      "cancel": "Hủy",
+      "bookingLoading": "Đang đặt lịch khám..."
     },
     "verify": {
       "success": "Xác nhận lịch hẹn thành công",

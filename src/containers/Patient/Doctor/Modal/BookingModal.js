@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import "./BookingModal.scss";
+
 import { FormattedMessage } from "react-intl";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import ProfileDoctor from "../ProfileDoctor";
@@ -27,6 +28,7 @@ class BookingModal extends Component {
       genders: "",
       doctorId: "",
       timeType: "",
+      isLoading: false,
     };
   }
 
@@ -93,6 +95,9 @@ class BookingModal extends Component {
   };
 
   handleConfirmBooking = async () => {
+    // Loading screen bắt đầu
+    this.setState({ isLoading: true });
+
     //validate
     let timeString = this.BuildTimeBooking(this.props.dataScheduleModalTime);
     let doctorName = this.BuildDoctorName(this.props.dataScheduleModalTime);
@@ -118,6 +123,8 @@ class BookingModal extends Component {
     } else {
       toast.error("Booking new appointment error!!!");
     }
+
+    this.setState({ isLoading: false });
   };
 
   BuildTimeBooking = (dataScheduleModalTime) => {
@@ -161,6 +168,18 @@ class BookingModal extends Component {
     // console.log('check dataTime', this.props.dataScheduleModalTime)
     return (
       <Modal isOpen={isOpenModal} className="booking-modal-container" size="lg" centered>
+        {this.state.isLoading && (
+          <div className="loading-overlay">
+            <div className="spinner" />
+            <div className="text">
+              <FormattedMessage
+                id="patient.booking-modal.bookingLoading"
+                defaultMessage="Booking appointment..."
+              />
+            </div>
+          </div>
+        )}
+
         <div className="booking-modal-content">
           <div className="booking-modal-header">
             <span className="left">
@@ -171,17 +190,17 @@ class BookingModal extends Component {
             </span>
           </div>
 
-                    <div className='booking-modal-body'>
-                        {/* {JSON.stringify(dataScheduleModalTime)} */}
-                        <div className='doctor-infor'>
-                            <ProfileDoctor
-                                doctorId={doctorId}
-                                isShowDescDoctor={false}
-                                dataScheduleModalTime={dataScheduleModalTime}
-                                isShowPrice={true}
-                                isShowLinkDetail={false}
-                            />
-                        </div>
+          <div className="booking-modal-body">
+            {/* {JSON.stringify(dataScheduleModalTime)} */}
+            <div className="doctor-infor">
+              <ProfileDoctor
+                doctorId={doctorId}
+                isShowDescDoctor={false}
+                dataScheduleModalTime={dataScheduleModalTime}
+                isShowPrice={true}
+                isShowLinkDetail={false}
+              />
+            </div>
 
             <div className="row">
               <div className="col-6 form-group my-2">

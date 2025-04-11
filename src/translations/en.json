@@ -178,7 +178,8 @@
       "reason": "reason for examination",
       "gender": "Gender",
       "confirm": "confirm",
-      "cancel": "cancel"
+      "cancel": "cancel",
+      "bookingLoading": "Booking appointment..."
     },
     "verify": {
       "success": "Your appointment has been successfully confirmed",
