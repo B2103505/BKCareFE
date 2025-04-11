@@ -42,7 +42,7 @@ class DetailClinic extends Component {
 
         // 👉 Chỉ log ở đây thôi
         if (data.image && data.image.data) {
-          console.log("✅ Ảnh buffer từ DB:", data.image.data);
+          // console.log("✅ Ảnh buffer từ DB:", data.image.data);
         }
 
         // Chuyển buffer thành Base64 để hiển thị hình ảnh
@@ -50,7 +50,7 @@ class DetailClinic extends Component {
         const base64String = Buffer.from(bufferData).toString("utf-8");
         const imageSrc = base64String; // Đây là chuỗi base64 của hình ảnh
 
-        console.log(imageSrc);
+        // console.log(imageSrc);
 
         this.setState({
           dataDetailClinic: res.data,
@@ -68,6 +68,8 @@ class DetailClinic extends Component {
 
   render() {
     let { arrDoctorId, dataDetailClinic } = this.state;
+
+    console.log("Check detail clinic", dataDetailClinic);
 
     return (
       <>
