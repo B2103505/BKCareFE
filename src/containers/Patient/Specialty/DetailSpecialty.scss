@@ -1,6 +1,4 @@
 .specialty-info-container {
-  margin: 3rem 10%;
-  border: 1px solid red;
   display: flex;
   background-color: white;
   gap: 20px;
@@ -108,8 +106,7 @@
       padding: 10px;
       border-left: 1px solid #eee;
 
-      .doctor-schedule {
-      }
+      .doctor-schedule {}
 
       .doctor-extra-info {
         border-top: 1px solid #ddd;

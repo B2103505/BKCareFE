@@ -56,6 +56,7 @@ class DetailSpecialty extends Component {
             valueVi: "Toàn quốc",
           });
         }
+        console.log('check data', data)
 
         const bufferData = data.image.data;
         const base64String = Buffer.from(bufferData, "base64").toString("utf-8");
@@ -159,7 +160,7 @@ class DetailSpecialty extends Component {
                         isShowDescDoctor={true}
                         isShowLinkDetail={true}
                         isShowPrice={false}
-                        // dataScheduleModalTime={dataScheduleModalTime}
+                      // dataScheduleModalTime={dataScheduleModalTime}
                       />
                     </div>
                   </div>
