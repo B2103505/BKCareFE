@@ -105,6 +105,7 @@ export const CreateNewUser = (data) => {
         dispatch(saveUserSuccess());
         dispatch(fetchAllUserStart());
       } else {
+        toast.error("Create a new user faild");
         dispatch(saveUserFailed());
       }
     } catch (e) {
