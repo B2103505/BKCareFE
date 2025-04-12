@@ -29,9 +29,9 @@ class Doctor extends Component {
 
   handleViewDetailDoctor = (doctor) => {
     if (this.props.history) {
-      this.props.history.push(`/detail-doctor/${doctor.id}`)
+      this.props.history.push(`/detail-doctor/${doctor.id}`);
     }
-  }
+  };
 
   render() {
     // console.log("check topDoctorsRedux", this.props.topDoctorsRedux);
@@ -86,18 +86,14 @@ class Doctor extends Component {
                       const imageSrc = base64String; // Đây là chuỗi base64 của hình ảnh
 
                       return (
-                        <>
-                          <div
-                            className="doctor-avatar"
-                            key={index}
-                            onClick={() => this.handleViewDetailDoctor(item)}
-                          >
+                        <React.Fragment key={index}>
+                          <div className="doctor-avatar" onClick={() => this.handleViewDetailDoctor(item)}>
                             <img src={imageSrc} alt="Doctor Avatar" />
                             <h3>
                               <FormattedMessage id={position} /> {language === LANGUAGES.VI ? nameVi : nameEn}{" "}
                             </h3>
                           </div>
-                        </>
+                        </React.Fragment>
                       );
                     })}
                 </div>

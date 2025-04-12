@@ -16,7 +16,7 @@ class Specialty extends Component {
 
   async componentDidMount() {
     let res = await getAllSpecialty();
-    console.log("check res", res);
+    // console.log("check res", res);
     if (res && res.errCode === 0) {
       this.setState({
         dataSpecialty: res.data ? res.data : [],
@@ -32,7 +32,7 @@ class Specialty extends Component {
 
   render() {
     let { dataSpecialty } = this.state;
-    console.log(dataSpecialty);
+    // console.log(dataSpecialty);
 
     return (
       <div className="section-share section-specialty">

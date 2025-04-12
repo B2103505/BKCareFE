@@ -6,7 +6,6 @@ import { FormattedMessage } from "react-intl";
 import DatePicker from "../../../components/Input/DatePicker";
 import { getAllPatientForDoctor, getProfileDoctorById, postSendRemedy } from "../../../services/UserService";
 import moment from "moment";
-import { isConstructorDeclaration } from "typescript";
 import RemedyModal from "./RemedyModal";
 import { toast } from "react-toastify";
 

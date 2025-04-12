@@ -11,7 +11,7 @@ function HospitalSection() {
   useEffect(() => {
     const fetchClinic = async () => {
       let res = await getAllClinic();
-      console.log("check res", res);
+      // console.log("check res", res);
       if (res && res.errCode === 0) {
         setDataClinic(res.data || []);
       }
