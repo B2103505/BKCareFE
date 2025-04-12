@@ -135,6 +135,19 @@
       color: blue !important; // ✅ Đảm bảo màu chữ thay đổi
     }
   }
+
+  &__logout {
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: #e60000;
+    }
+  }
 }
 
 .home-banner {

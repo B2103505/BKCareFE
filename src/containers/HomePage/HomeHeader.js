@@ -5,8 +5,8 @@ import logo from "../../assets/Logo.webp";
 import { FormattedMessage } from "react-intl";
 import { injectIntl } from "react-intl";
 import { LANGUAGES } from "../../utils";
-import { changelanguageApp } from "../../store/actions";
-import { withRouter } from 'react-router';
+import { changelanguageApp, processLogout } from "../../store/actions";
+import { withRouter } from "react-router";
 import SideMenu from "./Section/SideMenu/SideMenu";
 
 class HomeHeader extends Component {
@@ -32,7 +32,14 @@ class HomeHeader extends Component {
     if (this.props.history) {
       this.props.history.push(`/home`);
     }
-  }
+  };
+
+  handleLogout = () => {
+    this.props.processLogout();
+    if (this.props.history) {
+      this.props.history.push("/login");
+    }
+  };
 
   render() {
     const { intl } = this.props;
@@ -46,8 +53,7 @@ class HomeHeader extends Component {
               <i className="fas fa-bars" onClick={this.toggleMenu}></i>
               <div className="home-header__logo">
                 <div className="header-logo">
-                  <img src={logo} alt="Logo" 
-                  onClick={() => this.returntoHome()}/>
+                  <img src={logo} alt="Logo" onClick={() => this.returntoHome()} />
                 </div>
               </div>
             </div>
@@ -128,10 +134,13 @@ class HomeHeader extends Component {
                   <span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span>
                 </div>
               </div>
+              <div className="home-header__logout" onClick={this.handleLogout} title="Log out">
+                <i className="fas fa-sign-out-alt"></i>
+              </div>
             </div>
           </div>
         </div>
-        {this.props.isShowBanner === true &&
+        {this.props.isShowBanner === true && (
           <div className="home-banner">
             <div className="home-banner__intro">
               <h2>
@@ -160,7 +169,7 @@ class HomeHeader extends Component {
             </div>
             <div className="home-banner__gradient"></div>
           </div>
-        }
+        )}
         <SideMenu isOpen={this.state.isMenuOpen} onClose={() => this.setState({ isMenuOpen: false })} />
       </React.Fragment>
     );
@@ -177,6 +186,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     changelanguageAppRedux: (language) => dispatch(changelanguageApp(language)),
+    processLogout: () => dispatch(processLogout()),
   };
 };
 
